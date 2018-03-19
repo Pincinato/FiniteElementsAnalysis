@@ -29,3 +29,205 @@ mdb.models['Connecting_Lug'].sketches['__profile__'].undo()
 mdb.models['Connecting_Lug'].sketches['__profile__'].rectangle(point1=(-0.085, 
     0.0), point2=(-0.015, -0.03))
 # Save by fe1 on 2018_03_19-09.16.31; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_19-09.20.09; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].sketches['__profile__'].undo()
+mdb.models['Connecting_Lug'].sketches['__profile__'].redo()
+del mdb.models['Connecting_Lug'].sketches['__profile__']
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__profile__', sheetSize=
+    0.25)
+mdb.models['Connecting_Lug'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Connecting_Lug'].sketches['__profile__'].rectangle(point1=(-0.1, 
+    -0.00375), point2=(-0.03875, -0.035))
+# Save by fe1 on 2018_03_19-09.25.26; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_19-09.25.39; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].Part(dimensionality=THREE_D, name='Connecting Lug'
+    , type=DEFORMABLE_BODY)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].BaseSolidExtrude(depth=
+    0.025, sketch=mdb.models['Connecting_Lug'].sketches['__profile__'])
+del mdb.models['Connecting_Lug'].sketches['__profile__']
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].sketch)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Connecting_Lug'].sketches['__edit__'], upToFeature=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'])
+mdb.models['Connecting_Lug'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[4], ))
+mdb.models['Connecting_Lug'].sketches['__edit__'].EqualLengthConstraint(
+    entity1=mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[5], 
+    entity2=mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[3])
+mdb.models['Connecting_Lug'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    0.0, 0.0), value=0.08, vertex1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[3], vertex2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[0])
+mdb.models['Connecting_Lug'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    0.1, 0.0), value=0.1, vertex1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[3], vertex2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[0])
+mdb.models['Connecting_Lug'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    0.1, 0.0), value=0.1, vertex1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[3], vertex2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[0])
+mdb.models['Connecting_Lug'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    0.05, 0.0), value=0.05, vertex1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[0], vertex2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[1])
+# Save by fe1 on 2018_03_19-09.38.59; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    -0.0101477969437838, 0.0152019504457712), value=0.1, vertex1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[3], vertex2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[0])
+mdb.models['Connecting_Lug'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Connecting_Lug'].sketches['__edit__'].dimensions[2], ))
+mdb.models['Connecting_Lug'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Connecting_Lug'].sketches['__edit__'].dimensions[1], ))
+mdb.models['Connecting_Lug'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Connecting_Lug'].sketches['__edit__'].dimensions[0], ))
+mdb.models['Connecting_Lug'].sketches['__edit__'].Arc3Points(point1=(0.0, 
+    0.015), point2=(0.0, -0.035), point3=(0.02125, -0.00875))
+# Save by fe1 on 2018_03_19-09.47.48; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].sketches['__edit__'].TangentConstraint(entity1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[5], entity2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[6])
+mdb.models['Connecting_Lug'].sketches['__edit__'].TangentConstraint(entity1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[3], entity2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[6])
+# Save by fe1 on 2018_03_19-09.49.52; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].sketches['__edit__'].CircleByCenterPerimeter(
+    center=(0.0, -0.00875), point1=(0.00875, -0.0225))
+mdb.models['Connecting_Lug'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    0.015, 0.0), value=0.015, vertex1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[5], vertex2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[6])
+mdb.models['Connecting_Lug'].sketches['__edit__'].ConcentricConstraint(entity1=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].vertices[5], entity2=
+    mdb.models['Connecting_Lug'].sketches['__edit__'].geometry[6])
+# Save by fe1 on 2018_03_19-09.54.01; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['Connecting_Lug'].sketches['__edit__'])
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].sketch)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Connecting_Lug'].sketches['__edit__'], upToFeature=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'])
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].sketch)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Connecting_Lug'].sketches['__edit__'], upToFeature=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'])
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].sketch)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Connecting_Lug'].sketches['__edit__'], upToFeature=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'])
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='Connecting_Lug', 
+    objectToCopy=mdb.models['Connecting_Lug'].sketches['__edit__'])
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].regenerate()
+# Save by fe1 on 2018_03_19-10.00.01; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_19-10.00.15; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_19-10.00.22; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_19-10.00.23; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].setValues(
+    depth=0.02)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].regenerate()
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].regenerate()
+# Save by fe1 on 2018_03_19-10.03.54; build 2016 2015_09_24-22.31.09 126547
