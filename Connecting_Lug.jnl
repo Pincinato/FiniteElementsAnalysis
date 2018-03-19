@@ -1,0 +1,31 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models.changeKey(fromName='Model-1', toName='Connecting_Lug')
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__profile__', sheetSize=
+    0.25)
+mdb.models['Connecting_Lug'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Connecting_Lug'].sketches['__profile__'].Line(point1=(-0.05625, 
+    0.01), point2=(-0.01375, 0.0175))
+mdb.models['Connecting_Lug'].sketches['__profile__'].Line(point1=(-0.01375, 
+    0.0175), point2=(200.0, 0.0))
+mdb.models['Connecting_Lug'].sketches['__profile__'].undo()
+mdb.models['Connecting_Lug'].sketches['__profile__'].undo()
+mdb.models['Connecting_Lug'].sketches['__profile__'].rectangle(point1=(-0.075, 
+    0.01875), point2=(-0.04875, -0.00625))
+mdb.models['Connecting_Lug'].sketches['__profile__'].undo()
+mdb.models['Connecting_Lug'].sketches['__profile__'].rectangle(point1=(-0.085, 
+    0.0), point2=(-0.015, -0.03))
+# Save by fe1 on 2018_03_19-09.16.31; build 2016 2015_09_24-22.31.09 126547
