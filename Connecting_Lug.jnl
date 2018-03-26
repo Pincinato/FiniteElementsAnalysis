@@ -351,3 +351,5 @@ mdb.models['Connecting_Lug'].EncastreBC(createStepName='LugLoad', localCsys=
     mdb.models['Connecting_Lug'].rootAssembly.sets['Set-2'])
 # Save by fe1 on 2018_03_26-08.33.22; build 2016 2015_09_24-22.31.09 126547
 # Save by fe1 on 2018_03_26-08.33.24; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-08.35.54; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-08.35.55; build 2016 2015_09_24-22.31.09 126547
