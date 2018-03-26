@@ -231,3 +231,123 @@ mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1']
 mdb.models['Connecting_Lug'].parts['Connecting Lug'].regenerate()
 mdb.models['Connecting_Lug'].parts['Connecting Lug'].regenerate()
 # Save by fe1 on 2018_03_19-10.03.54; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_19-10.04.54; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].sketch)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Connecting_Lug'].sketches['__edit__'], upToFeature=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'])
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+mdb.models['Connecting_Lug'].Material(name='Steel')
+mdb.models['Connecting_Lug'].materials['Steel'].Elastic(table=((2e-07, 0.3), ))
+mdb.models['Connecting_Lug'].HomogeneousSolidSection(material='Steel', name=
+    'LugSection', thickness=None)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].Set(cells=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-1')
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].SectionAssignment(offset=
+    0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].sets['Set-1'], 
+    sectionName='LugSection', thicknessAssignment=FROM_SECTION)
+# Save by fe1 on 2018_03_26-08.11.29; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-08.11.33; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Connecting_Lug'].rootAssembly.Instance(dependent=ON, name=
+    'Connecting Lug-1', part=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'])
+# Save by fe1 on 2018_03_26-08.14.23; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].StaticStep(description='lugload', name='LugLoad', 
+    previous='Initial')
+mdb.models['Connecting_Lug'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('PE', 'PEEQ', 'PEMAG', 'LE', 'RF', 'RT', 'RM', 'CF', 'SF', 'TF', 
+    'VF', 'ESF1', 'NFORC', 'NFORCSO', 'RBFOR', 'BF', 'CORIOMAG', 'ROTAMAG', 
+    'CENTMAG', 'CENTRIFMAG', 'GRAV', 'P', 'HP', 'TRSHR', 'TRNOR', 'CSTRESS', 
+    'CSTRESSETOS', 'CLINELOAD', 'CPOINTLOAD', 'CDSTRESS', 'CDISP', 'CDISPETOS', 
+    'CTANDIR', 'CFORCE', 'CNAREA', 'CSTATUS', 'PPRESS'))
+mdb.models['Connecting_Lug'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('E', 'VE', 'PE', 'VEEQ', 'PEEQ', 'PEEQT', 'PEEQMAX', 'PEMAG', 
+    'PEQC', 'EE', 'IE', 'THE', 'NE', 'LE', 'ER', 'SE', 'SPE', 'SEPE', 'SEE', 
+    'SEP', 'SALPHA', 'RF', 'RT', 'RM', 'CF', 'SF', 'TF', 'VF', 'ESF1', 'NFORC', 
+    'NFORCSO', 'RBFOR', 'BF', 'CORIOMAG', 'ROTAMAG', 'CENTMAG', 'CENTRIFMAG', 
+    'GRAV', 'P', 'HP', 'TRSHR', 'TRNOR', 'CSTRESS', 'CSTRESSETOS', 'CLINELOAD', 
+    'CPOINTLOAD', 'CDSTRESS', 'CDISP', 'CDISPETOS', 'CTANDIR', 'CFORCE', 
+    'CNAREA', 'CSTATUS', 'PPRESS'))
+mdb.models['Connecting_Lug'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('BF', 'CDISP', 'CDISPETOS', 'CDSTRESS', 'CENTMAG', 'CENTRIFMAG', 
+    'CFORCE', 'CLINELOAD', 'CNAREA', 'CORIOMAG', 'CPOINTLOAD', 'CSTATUS', 
+    'CSTRESS', 'CSTRESSETOS', 'CTANDIR', 'E', 'EE', 'ER', 'ESF1', 'GRAV', 'HP', 
+    'IE', 'LE', 'NE', 'NFORC', 'NFORCSO', 'P', 'PE', 'PEEQ', 'PEEQMAX', 
+    'PEEQT', 'PEMAG', 'PEQC', 'PPRESS', 'RBFOR', 'RF', 'RM', 'ROTAMAG', 'RT', 
+    'SALPHA', 'SE', 'SEE', 'SEP', 'SEPE', 'SF', 'SPE', 'TF', 'THE', 'TRNOR', 
+    'TRSHR', 'VE', 'VEEQ', 'VF'))
+# Save by fe1 on 2018_03_26-08.25.05; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].rootAssembly.Set(edges=
+    mdb.models['Connecting_Lug'].rootAssembly.instances['Connecting Lug-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), name='Set-1')
+mdb.models['Connecting_Lug'].EncastreBC(createStepName='LugLoad', localCsys=
+    None, name='FixLeftEnd', region=
+    mdb.models['Connecting_Lug'].rootAssembly.sets['Set-1'])
+mdb.models['Connecting_Lug'].boundaryConditions['FixLeftEnd'].setValues(region=
+    mdb.models['Connecting_Lug'].rootAssembly.instances['Connecting Lug-1'].sets['Set-1'])
+del mdb.models['Connecting_Lug'].boundaryConditions['FixLeftEnd']
+mdb.models['Connecting_Lug'].rootAssembly.Set(faces=
+    mdb.models['Connecting_Lug'].rootAssembly.instances['Connecting Lug-1'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ), name='Set-2')
+mdb.models['Connecting_Lug'].EncastreBC(createStepName='LugLoad', localCsys=
+    None, name='FixLeftEnd', region=
+    mdb.models['Connecting_Lug'].rootAssembly.sets['Set-2'])
+# Save by fe1 on 2018_03_26-08.33.22; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-08.33.24; build 2016 2015_09_24-22.31.09 126547
