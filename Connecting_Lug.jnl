@@ -353,3 +353,89 @@ mdb.models['Connecting_Lug'].EncastreBC(createStepName='LugLoad', localCsys=
 # Save by fe1 on 2018_03_26-08.33.24; build 2016 2015_09_24-22.31.09 126547
 # Save by fe1 on 2018_03_26-08.35.54; build 2016 2015_09_24-22.31.09 126547
 # Save by fe1 on 2018_03_26-08.35.55; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'].sketch)
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Connecting_Lug'].sketches['__edit__'], upToFeature=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Solid extrude-1'])
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].regenerate()
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].PartitionCellByPlaneThreePoints(
+    cells=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), point1=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].vertices[8], point2=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].vertices[9], point3=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].InterestingPoint(
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].edges[12], MIDDLE))
+del mdb.models['Connecting_Lug'].parts['Connecting Lug'].features['Partition cell-1']
+# Save by fe1 on 2018_03_26-09.52.05; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].parts['Connecting Lug'].PartitionCellByPlaneThreePoints(
+    cells=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), point1=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].InterestingPoint(
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].edges[0], MIDDLE), 
+    point2=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].InterestingPoint(
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].edges[0], CENTER), 
+    point3=
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].InterestingPoint(
+    mdb.models['Connecting_Lug'].parts['Connecting Lug'].edges[2], MIDDLE))
+# Save by fe1 on 2018_03_26-09.53.06; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Connecting_Lug'].rootAssembly.regenerate()
+mdb.models['Connecting_Lug'].rootAssembly.Surface(name='Surf-1', side1Faces=
+    mdb.models['Connecting_Lug'].rootAssembly.instances['Connecting Lug-1'].faces.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['Connecting_Lug'].Pressure(amplitude=UNSET, createStepName='LugLoad'
+    , distributionType=UNIFORM, field='', magnitude=50000000.0, name=
+    'PressureLoad', region=
+    mdb.models['Connecting_Lug'].rootAssembly.surfaces['Surf-1'])
+# Save by fe1 on 2018_03_26-09.55.17; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-09.55.22; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-09.59.47; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-09.59.48; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-09.59.59; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-10.00.00; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-10.00.00; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_03_26-10.02.14; build 2016 2015_09_24-22.31.09 126547
