@@ -102,3 +102,5 @@ odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/CPS8_2_
 session.writeFieldReport(fileName='abaqus.rpt', append=ON, 
     sortItem='Node Label', odb=odb, step=0, frame=1, outputPosition=NODAL, 
     variable=(('U', NODAL), ))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
