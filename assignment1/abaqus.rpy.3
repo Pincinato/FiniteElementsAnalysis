@@ -1,0 +1,147 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Mon Mar 26 09:39:52 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=274.631500244141, 
+    height=125.096046447754)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(pathName='/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae')
+#: The model database "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='LugLoad')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.21416, 
+    farPlane=0.382618, width=0.19284, height=0.0756477, cameraPosition=(
+    0.164247, 0.129719, 0.179867), cameraUpVector=(-0.480508, 0.660136, 
+    -0.57735), cameraTarget=(-0.0322314, -0.0132965, 0.00802788))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.216519, 
+    farPlane=0.381061, width=0.194964, height=0.0764811, cameraPosition=(
+    0.164247, 0.129948, 0.180371), cameraTarget=(-0.0322314, -0.0130676, 
+    0.00853176))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.217751, 
+    farPlane=0.382325, width=0.196073, height=0.0769161, cameraPosition=(
+    0.164643, 0.129948, 0.182079), cameraTarget=(-0.031835, -0.0130676, 
+    0.0102393))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.216972, 
+    farPlane=0.384181, width=0.195371, height=0.0766409, cameraPosition=(
+    0.179832, 0.10635, 0.182079), cameraUpVector=(-0.401857, 0.710759, 
+    -0.57735), cameraTarget=(-0.0317133, -0.0132567, 0.0102393))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.220348, 
+    farPlane=0.381846, width=0.198411, height=0.0778333, cameraPosition=(
+    0.179832, 0.0635675, 0.205062), cameraUpVector=(-0.401857, 0.823744, 
+    -0.399947), cameraTarget=(-0.0317133, -0.0136755, 0.0104643))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.243316, 
+    farPlane=0.354903, width=0.219092, height=0.0859463, cameraPosition=(
+    0.0448032, 0.0635675, 0.28805), cameraUpVector=(-0.132421, 0.823744, 
+    -0.551282), cameraTarget=(-0.0332661, -0.0136755, 0.0114186))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.235486, 
+    farPlane=0.354896, width=0.212043, height=0.0831809, cameraPosition=(
+    0.0256606, 0.158542, 0.244048), cameraUpVector=(-0.194507, 0.57735, 
+    -0.79299), cameraTarget=(-0.0322314, -0.0132965, 0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.232907, 
+    farPlane=0.358173, width=0.209721, height=0.08227, cameraPosition=(
+    0.041571, 0.152326, 0.244048), cameraUpVector=(-0.138854, 0.5932, 
+    -0.79299), cameraTarget=(-0.032363, -0.0132451, 0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.240745, 
+    farPlane=0.351648, width=0.216779, height=0.0850388, cameraPosition=(
+    0.041571, 0.052415, 0.288605), cameraUpVector=(-0.138854, 0.847334, 
+    -0.512585), cameraTarget=(-0.032363, -0.0125375, 0.00771231))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.252658, 
+    farPlane=0.339735, width=0.112178, height=0.0440055, viewOffsetX=0.0180472, 
+    viewOffsetY=-0.00191718)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+s = p.features['Solid extrude-1'].sketch
+mdb.models['Connecting_Lug'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s1 = mdb.models['Connecting_Lug'].sketches['__edit__']
+g, v, d, c = s1.geometry, s1.vertices, s1.dimensions, s1.constraints
+s1.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s1, 
+    upToFeature=p.features['Solid extrude-1'], filter=COPLANAR_EDGES)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.29026, 
+    farPlane=0.360561, width=0.248177, height=0.0973555, cameraPosition=(
+    -0.0253341, -0.0153314, 0.335411), cameraTarget=(-0.0253341, -0.0153314, 
+    0))
+s1.unsetPrimaryObject()
+del mdb.models['Connecting_Lug'].sketches['__edit__']
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+p.regenerate()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.247857, 
+    farPlane=0.344537, width=0.15319, height=0.0600939, viewOffsetX=-0.0123812, 
+    viewOffsetY=0.000578241)
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+pickedCells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+v1, e, d1 = p.vertices, p.edges, p.datums
+p.PartitionCellByPlaneThreePoints(point1=v1[8], point2=v1[9], 
+    cells=pickedCells, point3=p.InterestingPoint(edge=e[12], rule=MIDDLE))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+del p.features['Partition cell-1']
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+pickedCells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+v2, e1, d2 = p.vertices, p.edges, p.datums
+p.PartitionCellByPlaneThreePoints(cells=pickedCells, point1=p.InterestingPoint(
+    edge=e1[0], rule=MIDDLE), point2=p.InterestingPoint(edge=e1[0], 
+    rule=CENTER), point3=p.InterestingPoint(edge=e1[2], rule=MIDDLE))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+a = mdb.models['Connecting_Lug'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Connecting_Lug'].rootAssembly
+s1 = a.instances['Connecting Lug-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#800 ]', ), )
+region = a.Surface(side1Faces=side1Faces1, name='Surf-1')
+mdb.models['Connecting_Lug'].Pressure(name='PressureLoad', 
+    createStepName='LugLoad', region=region, distributionType=UNIFORM, 
+    field='', magnitude=50000000.0, amplitude=UNSET)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".

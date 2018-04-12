@@ -306,3 +306,44 @@ mdb.jobs['CPS4_2_12']._Message(JOB_COMPLETED, {
     'time': 'Mon Apr  9 10:02:46 2018', 'jobName': 'CPS4_2_12'})
 # Save by fe1 on 2018_04_09-10.03.43; build 2016 2015_09_24-22.31.09 126547
 # Save by fe1 on 2018_04_09-10.03.43; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_12-18.49.51; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Assignment1'].rootAssembly.Set(name='Set-3', vertices=
+    mdb.models['Assignment1'].rootAssembly.instances['PartAssignment1-1'].vertices.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Assignment1'].ConcentratedForce(cf2=-25.0, createStepName='Load', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-2', region=
+    mdb.models['Assignment1'].rootAssembly.sets['Set-3'])
+mdb.models['Assignment1'].loads['Load-1'].setValues(cf2=-25.0, 
+    distributionType=UNIFORM, field='')
+mdb.models['Assignment1'].materials['steel'].elastic.setValues(table=((90000.0, 
+    0.3), ))
+# Save by fe1 on 2018_04_12-19.06.22; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_12-19.06.55; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['CPS4_2_12'].submit(consistencyChecking=OFF)
+# Save by fe1 on 2018_04_12-19.07.17; build 2016 2015_09_24-22.31.09 126547

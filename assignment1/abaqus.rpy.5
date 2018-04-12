@@ -1,0 +1,169 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Mon Apr  9 08:24:27 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=274.631500244141, 
+    height=125.096046447754)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(pathName='/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae')
+#: The model database "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.229628, 
+    farPlane=0.361689, width=0.219749, height=0.0811116, cameraPosition=(
+    0.0493942, 0.158542, 0.236926), cameraUpVector=(-0.274248, 0.57735, 
+    -0.769061), cameraTarget=(-0.0322314, -0.0132965, 0.00802787))
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='LugLoad')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, loads=OFF, 
+    bcs=OFF, predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Lug'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Lug.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['Connecting_Lug'].loads['PressureLoad'].setValues(
+    distributionType=UNIFORM, magnitude=50000000.0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Lug'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Lug.inp".
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Job Lug: Analysis Input File Processor completed successfully.
+#: Job Lug: Abaqus/Standard completed successfully.
+#: Job Lug completed successfully. 
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Connecting_Lug'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=PRESELECT)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Job Lug: Analysis Input File Processor completed successfully.
+#: Job Lug: Abaqus/Standard completed successfully.
+#: Job Lug completed successfully. 
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.models['Connecting_Lug'].materials['Steel'].elastic.setValues(table=((
+    210000000000.0, 0.3), ))
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Job Lug: Analysis Input File Processor completed successfully.
+#: Job Lug: Abaqus/Standard completed successfully.
+#: Job Lug completed successfully. 
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+import os
+os.chdir(r"/home/fe1/Desktop/FiniteElementsAnalysis/assignment1")

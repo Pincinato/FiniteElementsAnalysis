@@ -1,0 +1,365 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Mon Apr  9 09:02:35 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=274.631500244141, 
+    height=125.096046447754)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+mdb.Model(name='Assignment1', modelType=STANDARD_EXPLICIT)
+#: The model "Assignment1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+del mdb.models['Model-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+s = mdb.models['Assignment1'].ConstrainedSketch(name='__profile__', 
+    sheetSize=300.0)
+g, v, d, c = s.geometry, s.vertices, s.dimensions, s.constraints
+s.setPrimaryObject(option=STANDALONE)
+s.rectangle(point1=(-100.0, -5.0), point2=(40.0, -15.0))
+mdb.saveAs(
+    pathName='/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1')
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+#: Warning: Select two or more lines.
+s.EqualLengthConstraint(entity1=g[5], entity2=g[3])
+s.ObliqueDimension(vertex1=v[3], vertex2=v[0], textPoint=(300.0, 0.0), 
+    value=300.0)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=249.529, 
+    farPlane=316.156, width=237.505, height=93.1692, cameraPosition=(-39.4365, 
+    -9.97119, 282.843), cameraTarget=(-39.4365, -9.97119, 0))
+s.ObliqueDimension(vertex1=v[0], vertex2=v[1], textPoint=(-118.67374420166, 
+    -11.3471059799194), value=10.0)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=219.025, 
+    farPlane=346.661, width=454.985, height=178.483, cameraPosition=(-17.5805, 
+    9.28739, 282.843), cameraTarget=(-17.5805, 9.28739, 0))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=230.746, 
+    farPlane=334.94, width=445.885, height=174.913, cameraPosition=(-18.9767, 
+    7.62305, 282.843), cameraTarget=(-18.9767, 7.62305, 0))
+p = mdb.models['Assignment1'].Part(name='PartAssignment1', 
+    dimensionality=TWO_D_PLANAR, type=DEFORMABLE_BODY)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+p.BaseShell(sketch=s)
+s.unsetPrimaryObject()
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+del mdb.models['Assignment1'].sketches['__profile__']
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+mdb.models['Assignment1'].Material(name='steel')
+mdb.models['Assignment1'].materials['steel'].Elastic(table=((90000000000.0, 
+    0.3), ))
+mdb.models['Assignment1'].HomogeneousSolidSection(name='SectionAssignment1', 
+    material='steel', thickness=None)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=563.952, 
+    farPlane=636.714, width=295.911, height=109.224, cameraUpVector=(
+    -0.0732667, 0.997312, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.985, 
+    farPlane=635.682, width=296.453, height=109.424, cameraPosition=(43.9036, 
+    -10, 600.333), cameraTarget=(43.9036, -10, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.988, 
+    farPlane=635.678, width=296.455, height=109.425, cameraPosition=(41.6487, 
+    -10, 600.333), cameraTarget=(41.6487, -10, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.988, 
+    farPlane=635.678, width=296.456, height=109.425, cameraPosition=(41.6487, 
+    -12.1124, 600.333), cameraTarget=(41.6487, -12.1124, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.988, 
+    farPlane=635.678, width=296.456, height=109.425, cameraPosition=(41.6487, 
+    -7.20497, 600.333), cameraTarget=(41.6487, -7.20497, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.988, 
+    farPlane=635.678, width=296.456, height=109.425, cameraPosition=(50.8876, 
+    -7.20497, 600.333), cameraTarget=(50.8876, -7.20497, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.988, 
+    farPlane=635.678, width=296.456, height=109.425, cameraPosition=(55.1887, 
+    -7.20497, 600.333), cameraTarget=(55.1887, -7.20497, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=557.476, 
+    farPlane=645.277, width=292.515, height=107.97, cameraPosition=(83.7244, 
+    163.949, 574.71), cameraUpVector=(0.128163, 0.94874, -0.288908), 
+    cameraTarget=(55.1887, -7.20497, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=526.872, 
+    farPlane=678.157, width=276.457, height=102.043, cameraPosition=(212.75, 
+    163.949, 553.453), cameraUpVector=(0.059747, 0.94874, -0.310361), 
+    cameraTarget=(55.4126, -7.20497, -0.0368872))
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#1 ]', ), )
+region = p.Set(faces=faces, name='Set-1')
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+p.SectionAssignment(region=region, sectionName='SectionAssignment1', 
+    offset=0.0, offsetType=MIDDLE_SURFACE, offsetField='', 
+    thicknessAssignment=FROM_SECTION)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+a = mdb.models['Assignment1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+a = mdb.models['Assignment1'].rootAssembly
+a.DatumCsysByDefault(CARTESIAN)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+a.Instance(name='PartAssignment1-1', part=p, dependent=ON)
+p1 = mdb.models['Assignment1'].parts['PartAssignment1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Assignment1'].sections['SectionAssignment1'].setValues(
+    material='steel', thickness=5.0)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+a = mdb.models['Assignment1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Assignment1'].StaticStep(name='Load', previous='Initial', 
+    description='load of assignment1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Load')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.models['Assignment1'].steps['Initial'].suppress()
+#* The Initial step cannot be suppressed.
+mdb.models['Assignment1'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'U', 'RF'))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+a = mdb.models['Assignment1'].rootAssembly
+e1 = a.instances['PartAssignment1-1'].edges
+edges1 = e1.getSequenceFromMask(mask=('[#2 ]', ), )
+region = a.Set(edges=edges1, name='Set-1')
+mdb.models['Assignment1'].EncastreBC(name='FixLeftEnd', 
+    createStepName='Initial', region=region, localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=564.078, 
+    farPlane=637.421, width=301.808, height=111.4, viewOffsetX=2.1144, 
+    viewOffsetY=0.219807)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Load')
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+a = mdb.models['Assignment1'].rootAssembly
+v1 = a.instances['PartAssignment1-1'].vertices
+verts1 = v1.getSequenceFromMask(mask=('[#8 ]', ), )
+region = a.Set(vertices=verts1, name='Set-2')
+mdb.models['Assignment1'].ConcentratedForce(name='Load-1', 
+    createStepName='Load', region=region, cf2=-50.0, distributionType=UNIFORM, 
+    field='', localCsys=None)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Assignment1'].parts['PartAssignment1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+elemType1 = mesh.ElemType(elemCode=CPS8, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPS6M, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#f ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=12, constraint=FIXED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=552.266, 
+    farPlane=652.763, width=77.9412, height=28.8644, viewOffsetX=-93.7901, 
+    viewOffsetY=-6.33246)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#2 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=2, constraint=FIXED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=535.325, 
+    farPlane=669.704, width=216.915, height=80.3315, viewOffsetX=-99.6416, 
+    viewOffsetY=19.8158)
+elemType1 = mesh.ElemType(elemCode=CPS8, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPS6M, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=536.81, 
+    farPlane=668.219, width=204.726, height=75.8171, viewOffsetX=-99.3183, 
+    viewOffsetY=19.3397)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=556.4, 
+    farPlane=648.629, width=44.0558, height=16.3154, viewOffsetX=129.53, 
+    viewOffsetY=10.8353)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#8 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=2, constraint=FIXED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=559.995, 
+    farPlane=645.034, width=14.5961, height=5.40544, viewOffsetX=138.744, 
+    viewOffsetY=12.0427)
+session.viewports['Viewport: 1'].view.fitView()
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+elemType1 = mesh.ElemType(elemCode=CPS4, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPS3, elemLibrary=STANDARD)
+p = mdb.models['Assignment1'].parts['PartAssignment1']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=561.948, 
+    farPlane=705.383, width=254.45, height=94.2321, viewOffsetX=-7.84379, 
+    viewOffsetY=1.8218)
+a = mdb.models['Assignment1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.Job(name='CPS4_2_12', model='Assignment1', description='', type=ANALYSIS, 
+    atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, 
+    memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['CPS4_2_12'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_2_12.inp" has been submitted for analysis.
+#: Job CPS4_2_12: Analysis Input File Processor completed successfully.
+#: Job CPS4_2_12: Abaqus/Standard completed successfully.
+#: Job CPS4_2_12 completed successfully. 
+o3 = session.openOdb(name='/home/fe1/CPS4_2_12.odb')
+#: Model: /home/fe1/CPS4_2_12.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       3
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(INVARIANT, 
+    'Mises'), )
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment1/Assignment1.cae".

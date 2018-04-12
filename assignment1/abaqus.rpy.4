@@ -1,0 +1,521 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Mon Mar 26 21:25:19 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=274.631500244141, 
+    height=125.096046447754)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(pathName='/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae')
+#: The model database "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Connecting_Lug'].rootAssembly
+a.regenerate()
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+elemType1 = mesh.ElemType(elemCode=C3D20R, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=C3D15, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D10, elemLibrary=STANDARD)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#f ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+p.seedPart(size=0.0084, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.237154, 
+    farPlane=0.352879, width=0.212839, height=0.0837702, cameraPosition=(
+    0.0165697, 0.158542, 0.246094), cameraUpVector=(-0.163964, 0.57735, 
+    -0.799864), cameraTarget=(-0.0322314, -0.0132965, 0.00802787))
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+v = p.vertices
+p.DatumPointByOffset(point=v[19], vector=(0.0, 0.0, 0.0))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+v1, d = p.vertices, p.datums
+p.DatumPointByOffset(point=d[11], vector=(0.075, 0.0, 0.0))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+p.deleteFeatures(('Datum pt-1', 'Datum pt-2', ))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+v = p.vertices
+p.DatumPointByOffset(point=v[19], vector=(0.075, 0.0, 0.0))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#f ]', ), )
+p.deleteMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.236727, 
+    farPlane=0.352965, width=0.213161, height=0.0836193, cameraPosition=(
+    0.0155301, 0.158542, 0.246094), cameraTarget=(-0.033271, -0.0132965, 
+    0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.227532, 
+    farPlane=0.364477, width=0.204882, height=0.0803716, cameraPosition=(
+    0.0770938, 0.127005, 0.246094), cameraUpVector=(0.069888, 0.596098, 
+    -0.799864), cameraTarget=(-0.033853, -0.0129984, 0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.226525, 
+    farPlane=0.365812, width=0.203975, height=0.080016, cameraPosition=(
+    0.0876593, 0.127005, 0.240877), cameraUpVector=(0.0337439, 0.596098, 
+    -0.802202), cameraTarget=(-0.0339111, -0.0129984, 0.00805657))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.223336, 
+    farPlane=0.371535, width=0.201103, height=0.0788895, cameraPosition=(
+    0.13809, 0.0559832, 0.240877), cameraUpVector=(0.303448, 0.51419, 
+    -0.802202), cameraTarget=(-0.0341605, -0.0126472, 0.00805657))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.222967, 
+    farPlane=0.371786, width=0.200771, height=0.0787591, cameraPosition=(
+    0.13809, 0.0646392, 0.238148), cameraUpVector=(0.303448, 0.48382, 
+    -0.820876), cameraTarget=(-0.0341605, -0.012653, 0.00805839))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.22523, 
+    farPlane=0.373908, width=0.202809, height=0.0795586, cameraPosition=(
+    0.13809, 0.0646392, 0.240985), cameraTarget=(-0.0341605, -0.012653, 
+    0.0108957))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+pickedCells = c.getSequenceFromMask(mask=('[#c ]', ), )
+e, v1, d1 = p.edges, p.vertices, p.datums
+p.PartitionCellByPlanePointNormal(normal=e[37], cells=pickedCells, 
+    point=p.InterestingPoint(edge=e[31], rule=MIDDLE))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.219517, 
+    farPlane=0.380213, width=0.197665, height=0.0775406, cameraPosition=(
+    0.17039, 0.0646392, 0.212842), cameraUpVector=(0.178892, 0.48382, 
+    -0.856689), cameraTarget=(-0.0339517, -0.012653, 0.0107138))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.234966, 
+    farPlane=0.360137, width=0.211576, height=0.0829977, cameraPosition=(
+    0.0354975, 0.195117, 0.212842), cameraUpVector=(-0.259287, 0.445931, 
+    -0.856689), cameraTarget=(-0.0349557, -0.0116818, 0.0107138))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.2369, 
+    farPlane=0.364919, width=0.213317, height=0.0836808, cameraPosition=(
+    0.0354975, 0.195117, 0.217787), cameraTarget=(-0.0349557, -0.0116818, 
+    0.0156587))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.247029, 
+    farPlane=0.359838, width=0.222438, height=0.0872587, cameraPosition=(
+    0.0354975, 0.0691271, 0.293736), cameraUpVector=(-0.259287, 0.806687, 
+    -0.531062), cameraTarget=(-0.0349557, -0.0130537, 0.0164857))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+p.seedPart(size=0.007, deviationFactor=0.1, minSizeFactor=0.1)
+elemType1 = mesh.ElemType(elemCode=C3D20R, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=C3D15, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D10, elemLibrary=STANDARD)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#3f ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+elemType1 = mesh.ElemType(elemCode=C3D20R, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=C3D15, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D10, elemLibrary=STANDARD)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#3f ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+a = mdb.models['Connecting_Lug'].rootAssembly
+a.regenerate()
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+mdb.Job(name='Lug', model='Connecting_Lug', description='job for lug', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+#: Error in job Lug: in keyword *BOUNDARY, file "Lug.inp", line 2933: Unknown assembly node set SET-2
+#: Error in job Lug: SURFACE DEFINITION ASSEMBLY_SURF-1 NOT FOUND.
+#: Error in job Lug: NODE SET ASSEMBLY_SET-2 HAS NOT BEEN DEFINED
+#: Error in job Lug: THE SURFACE ASSEMBLY_SURF-1 HAS NOT BEEN LOCATED
+#: Error in job Lug: A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-2 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL
+#: Error in job Lug: NODE SET ASSEMBLY_SET-2 HAS NOT BEEN DEFINED
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Error in job Lug: in keyword *BOUNDARY, file "Lug.inp", line 2933: Unknown assembly node set SET-2
+#: Error in job Lug: SURFACE DEFINITION ASSEMBLY_SURF-1 NOT FOUND.
+#: Error in job Lug: NODE SET ASSEMBLY_SET-2 HAS NOT BEEN DEFINED
+#: Error in job Lug: THE SURFACE ASSEMBLY_SURF-1 HAS NOT BEEN LOCATED
+#: Error in job Lug: A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-2 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL
+#: Error in job Lug: NODE SET ASSEMBLY_SET-2 HAS NOT BEEN DEFINED
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+del mdb.models['Connecting_Lug'].rootAssembly.sets['Set-1']
+del mdb.models['Connecting_Lug'].rootAssembly.sets['Set-2']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='LugLoad')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.242854, 
+    farPlane=0.346042, width=0.218677, height=0.0857833, cameraPosition=(
+    -0.0139742, 0.158542, 0.250358), cameraUpVector=(-0.0613411, 0.57735, 
+    -0.814189), cameraTarget=(-0.0322313, -0.0132965, 0.00802787))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Connecting_Lug'].boundaryConditions['FixLeftEnd']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.215048, 
+    farPlane=0.367869, width=0.193639, height=0.0759615, cameraPosition=(
+    -0.170155, 0.158542, 0.207403), cameraUpVector=(0.469077, 0.57735, 
+    -0.668306), cameraTarget=(-0.0305415, -0.0132965, 0.00849261))
+a = mdb.models['Connecting_Lug'].rootAssembly
+f1 = a.instances['Connecting Lug-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#4000000 ]', ), )
+region = a.Set(faces=faces1, name='Set-1')
+mdb.models['Connecting_Lug'].EncastreBC(name='FixLeftEnd', 
+    createStepName='LugLoad', region=region, localCsys=None)
+a = mdb.models['Connecting_Lug'].rootAssembly
+f1 = a.instances['Connecting Lug-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#200000 ]', ), )
+region = a.Set(faces=faces1, name='Set-2')
+mdb.models['Connecting_Lug'].EncastreBC(name='FixLeftEnd2', 
+    createStepName='LugLoad', region=region, localCsys=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Error in job Lug: SURFACE DEFINITION ASSEMBLY_SURF-1 NOT FOUND.
+#: Error in job Lug: THE SURFACE ASSEMBLY_SURF-1 HAS NOT BEEN LOCATED
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+a1 = mdb.models['Connecting_Lug'].rootAssembly
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+a1.Instance(name='Connecting Lug-2', part=p, dependent=ON)
+a1 = mdb.models['Connecting_Lug'].rootAssembly
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+a1.Instance(name='Connecting Lug-3', part=p, dependent=ON)
+a1 = mdb.models['Connecting_Lug'].rootAssembly
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+a1.Instance(name='Connecting Lug-4', part=p, dependent=ON)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Error in job Lug: SURFACE DEFINITION ASSEMBLY_SURF-1 NOT FOUND.
+#: Error in job Lug: THE SURFACE ASSEMBLY_SURF-1 HAS NOT BEEN LOCATED
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+a = mdb.models['Connecting_Lug'].rootAssembly
+del a.features['Connecting Lug-4']
+a = mdb.models['Connecting_Lug'].rootAssembly
+del a.features['Connecting Lug-3']
+a = mdb.models['Connecting_Lug'].rootAssembly
+del a.features['Connecting Lug-2']
+a = mdb.models['Connecting_Lug'].rootAssembly
+s1 = a.instances['Connecting Lug-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#7fb9f8fc ]', ), )
+a.Surface(side1Faces=side1Faces1, name='Surf-1')
+#: The surface 'Surf-1' has been edited (23 faces).
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Job Lug: Analysis Input File Processor completed successfully.
+#: Job Lug: Abaqus/Standard completed successfully.
+#: Job Lug completed successfully. 
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.241007, 
+    farPlane=0.34794, width=0.230638, height=0.0851308, cameraPosition=(
+    -0.0125672, 0.158542, 0.250248), cameraUpVector=(-0.0660684, 0.57735, 
+    -0.813819), cameraTarget=(-0.0322313, -0.0132965, 0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.237846, 
+    farPlane=0.346077, width=0.227613, height=0.0840145, cameraPosition=(
+    -0.0125672, 0.154191, 0.250248), cameraTarget=(-0.0322313, -0.017647, 
+    0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.237469, 
+    farPlane=0.345209, width=0.227253, height=0.0838814, cameraPosition=(
+    -0.0125672, 0.153113, 0.250248), cameraTarget=(-0.0322313, -0.0187249, 
+    0.00802787))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.199264, 
+    farPlane=0.385603, width=0.190691, height=0.0703861, cameraPosition=(
+    0.20126, 0.153113, -0.034405), cameraUpVector=(-0.800014, 0.57735, 
+    0.163229), cameraTarget=(-0.0368509, -0.0187249, 0.0141776))
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(0.260782, 
+    -0.0187249, 0.0141776), cameraUpVector=(0, 1, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.211531, 
+    farPlane=0.385033, width=0.202431, height=0.0747193, cameraPosition=(
+    0.260782, -0.0188932, 0.0141776), cameraTarget=(-0.0368509, -0.0188932, 
+    0.0141776))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.212245, 
+    farPlane=0.380418, width=0.203114, height=0.0749716, cameraPosition=(
+    -0.301276, -0.0188932, -0.125087), cameraTarget=(-0.038074, -0.0188932, 
+    0.0138745))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.202756, 
+    farPlane=0.3849, width=0.194034, height=0.0716198, cameraPosition=(
+    -0.301276, 0.0797117, -0.083784), cameraUpVector=(0, 0.701468, 0.712701), 
+    cameraTarget=(-0.038074, -0.0193262, 0.0136931))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.226374, 
+    farPlane=0.356919, width=0.216636, height=0.0799625, cameraPosition=(
+    0.0768942, 0.0797117, 0.262992), cameraUpVector=(0.498618, 0.701468, 
+    -0.509237), cameraTarget=(-0.0429715, -0.0193262, 0.00920215))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.223069, 
+    farPlane=0.360223, width=0.21783, height=0.0804033, 
+    viewOffsetX=-0.00130626, viewOffsetY=-0.000313681)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Connecting_Lug'].loads['PressureLoad']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.239327, 
+    farPlane=0.341556, width=0.200633, height=0.0787048, cameraPosition=(
+    -0.0183442, 0.156783, 0.247052), cameraUpVector=(-0.0808281, 0.57735, 
+    -0.812486), cameraTarget=(-0.0420339, -0.0124327, 0.00891935))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.240752, 
+    farPlane=0.340372, width=0.201827, height=0.0791735, cameraPosition=(
+    -0.0262505, 0.156783, 0.247705), cameraUpVector=(-0.0536065, 0.57735, 
+    -0.814735), cameraTarget=(-0.0419618, -0.0124327, 0.00891339))
+a = mdb.models['Connecting_Lug'].rootAssembly
+s1 = a.instances['Connecting Lug-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#10004000 ]', ), )
+region = a.Surface(side1Faces=side1Faces1, name='Surf-2')
+mdb.models['Connecting_Lug'].Pressure(name='PressureLoad', 
+    createStepName='LugLoad', region=region, distributionType=UNIFORM, 
+    field='', magnitude=50000000.0, amplitude=UNSET)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Job Lug: Analysis Input File Processor completed successfully.
+#: Job Lug: Abaqus/Standard completed successfully.
+#: Job Lug completed successfully. 
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    deformationScaling=UNIFORM, uniformScaleFactor=1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.214007, 
+    farPlane=0.380122, width=0.2048, height=0.0755937, cameraPosition=(
+    0.139607, 0.158542, 0.178881), cameraTarget=(-0.0322314, -0.0132965, 
+    0.00704183))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.24131, 
+    farPlane=0.346036, width=0.230928, height=0.0852381, cameraPosition=(
+    -0.00756516, 0.158542, 0.248698), cameraUpVector=(-0.0819287, 0.57735, 
+    -0.812376), cameraTarget=(-0.0319493, -0.0132965, 0.00690803))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.239711, 
+    farPlane=0.349481, width=0.229398, height=0.0846732, cameraPosition=(
+    -0.00756516, 0.158542, 0.249835), cameraTarget=(-0.0319493, -0.0132965, 
+    0.00804459))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+p = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+p1 = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Connecting_Lug'].parts['Connecting Lug']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.247788, 
+    farPlane=0.359743, width=0.223122, height=0.0878175, cameraPosition=(
+    0.0354975, 0.0486647, 0.299011), cameraUpVector=(-0.259287, 0.842656, 
+    -0.471913), cameraTarget=(-0.0349557, -0.0134449, 0.0165865))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.247384, 
+    farPlane=0.359719, width=0.222758, height=0.0876745, cameraPosition=(
+    0.0354975, 0.0486647, 0.298786), cameraTarget=(-0.0349557, -0.0134449, 
+    0.0163613))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.233773, 
+    farPlane=0.373732, width=0.210503, height=0.0828508, cameraPosition=(
+    0.107178, 0.0486647, 0.270608), cameraUpVector=(-0.37196, 0.842656, 
+    -0.38933), cameraTarget=(-0.0335578, -0.0134449, 0.0158118))
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.237266, 
+    farPlane=0.352471, width=0.227058, height=0.0838095, cameraPosition=(
+    0.00560559, 0.156146, 0.249835), cameraUpVector=(-0.0367234, 0.581977, 
+    -0.812376), cameraTarget=(-0.0320851, -0.0132718, 0.00804459))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.211759, 
+    farPlane=0.383601, width=0.202649, height=0.0747997, cameraPosition=(
+    0.153635, 0.156146, 0.16654), cameraUpVector=(-0.560808, 0.581977, 
+    -0.588895), cameraTarget=(-0.0334732, -0.0132718, 0.00882569))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.2154, 
+    farPlane=0.382032, width=0.206133, height=0.0760858, cameraPosition=(
+    0.153635, 0.156146, 0.168495), cameraTarget=(-0.0334732, -0.0132718, 
+    0.0107802))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.218383, 
+    farPlane=0.380248, width=0.208988, height=0.0771397, cameraPosition=(
+    0.153635, 0.112047, 0.205417), cameraUpVector=(-0.560808, 0.708819, 
+    -0.427867), cameraTarget=(-0.0334732, -0.0134316, 0.010914))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.218362, 
+    farPlane=0.380846, width=0.208968, height=0.0771323, cameraPosition=(
+    0.153635, 0.112047, 0.205858), cameraTarget=(-0.0334732, -0.0134316, 
+    0.0113553))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.241158, 
+    farPlane=0.355736, width=0.230783, height=0.0851846, cameraPosition=(
+    0.0276733, 0.112047, 0.274485), cameraUpVector=(-0.264742, 0.708819, 
+    -0.653825), cameraTarget=(-0.0343016, -0.0134316, 0.0118066))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+a = mdb.models['Connecting_Lug'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['Connecting_Lug'].loads['PressureLoad'].setValues(
+    distributionType=TOTAL_FORCE, magnitude=5e+70)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Error in job Lug: THIS FLOATING POINT VALUE (5.30508E+73) IS TOO LARGE; ITS ABSOLUTE VALUE MUST BE STRICTLY LESS THAN 1.00000E+36 ON THIS MACHINE.
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['Connecting_Lug'].loads['PressureLoad'].setValues(magnitude=5e+35)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Error in job Lug: THIS FLOATING POINT VALUE (5.30508E+38) IS TOO LARGE; ITS ABSOLUTE VALUE MUST BE STRICTLY LESS THAN 1.00000E+36 ON THIS MACHINE.
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Error in job Lug: THIS FLOATING POINT VALUE (5.30508E+38) IS TOO LARGE; ITS ABSOLUTE VALUE MUST BE STRICTLY LESS THAN 1.00000E+36 ON THIS MACHINE.
+#: Job Lug: Analysis Input File Processor aborted due to errors.
+#: Error in job Lug: Analysis Input File Processor exited with an error.
+#: Job Lug aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['Connecting_Lug'].loads['PressureLoad'].setValues(magnitude=5e+30)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Lug'].submit(consistencyChecking=OFF)
+#: The job input file "Lug.inp" has been submitted for analysis.
+#: Job Lug: Analysis Input File Processor completed successfully.
+#: Job Lug: Abaqus/Standard completed successfully.
+#: Job Lug completed successfully. 
+o3 = session.openOdb(name='/home/fe1/Lug.odb')
+#: Model: /home/fe1/Lug.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/Connecting_Lug.cae".
