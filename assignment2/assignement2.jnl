@@ -1,0 +1,601 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-75.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-66.25, 65.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-75.0, -20.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-75.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(-1.25, -17.5))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], ))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-70.0, 20.0), 
+    point2=(-70.0, -25.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-70.0, -25.0), 
+    point2=(-15.0, -25.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-15.0, -25.0), 
+    point2=(-15.0, -15.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-15.0, -15.0), 
+    point2=(-60.0, -15.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-60.0, -15.0), 
+    point2=(-60.0, 20.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-60.0, 20.0), 
+    point2=(-70.0, 20.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+# Save by fe1 on 2018_04_16-08.42.21; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+# Save by fe1 on 2018_04_16-08.44.11; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    100.0, 0.0), value=100.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -70.0264739990234, -35.6797142028809), value=100.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7])
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].dimensions[1], ))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    30.2322731018066, 0.443557739257812), value=100.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[9], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[8])
+mdb.models['Model-1'].sketches['__profile__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -61.0018539428711, 84.3054962158203), value=20.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10])
+# Save by fe1 on 2018_04_16-08.48.14; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='assignment2', 
+    type=DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['assignment2'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='steel')
+mdb.models['Model-1'].materials['steel'].Elastic(table=((500.0, 0.3), ))
+del mdb.models['Model-1'].materials['steel'].elastic
+mdb.models['Model-1'].materials['steel'].Plastic(table=((500.0, 0.0), ))
+# Save by fe1 on 2018_04_16-08.53.34; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-08.53.35; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].HomogeneousSolidSection(material='steel', name=
+    'Section_assignment2', thickness=2.0)
+# Save by fe1 on 2018_04_16-08.54.41; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['assignment2'].Set(faces=
+    mdb.models['Model-1'].parts['assignment2'].faces.getSequenceFromMask((
+    '[#1 ]', ), ), name='Set-1')
+mdb.models['Model-1'].parts['assignment2'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['assignment2'].sets['Set-1'], sectionName=
+    'Section_assignment2', thicknessAssignment=FROM_SECTION)
+# Save by fe1 on 2018_04_16-08.57.32; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-08.58.22; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='assignment2-1', 
+    part=mdb.models['Model-1'].parts['assignment2'])
+# Save by fe1 on 2018_04_16-09.00.11; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'U', 'RF', 'NFORC'))
+# Save by fe1 on 2018_04_16-09.04.56; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.05.38; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.06.27; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['assignment2-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-1')
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-1'])
+# Save by fe1 on 2018_04_16-09.09.40; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(name='Set-2', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['assignment2-1'].vertices.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-250.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-1', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-2'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-3', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['assignment2-1'].vertices.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-250.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-2', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-3'])
+# Save by fe1 on 2018_04_16-09.11.58; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.12.00; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.12.05; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['steel'].Elastic(table=((210000.0, 0.3), ))
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#9 ]', ), ), number=5)
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#30 ]', ), ), number=25)
+mdb.models['Model-1'].parts['assignment2'].generateMesh()
+mdb.models['Model-1'].parts['assignment2'].setElementType(elemTypes=(ElemType(
+    elemCode=CPS8R, elemLibrary=STANDARD), ElemType(elemCode=CPS6M, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['assignment2'].faces.getSequenceFromMask((
+    '[#1 ]', ), ), ))
+# Save by fe1 on 2018_04_16-09.22.52; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['assignment2'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['assignment2'].faces.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=7.81, name='__profile__', 
+    sheetSize=312.4, transform=
+    mdb.models['Model-1'].parts['assignment2'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['assignment2'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(-30.0, 5.0, 0.0)))
+mdb.models['Model-1'].parts['assignment2'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+# Save by fe1 on 2018_04_16-09.26.38; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-20.0, -10.0), 
+    point2=(-20.0, -30.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-20.0, -30.0), 
+    point2=(-20.0, -10.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[8], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-20.0, -10.0), 
+    point2=(-40.0, -10.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[6], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[10])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-40.0, -10.0), 
+    point2=(-20.0, -10.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[10], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[11])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-20.0, -10.0), 
+    point2=(-40.0, -30.0))
+mdb.models['Model-1'].parts['assignment2'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['assignment2'].faces.getSequenceFromMask((
+    '[#1 ]', ), ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#41 ]', ), ), number=5)
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#108 ]', ), ), number=25)
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#90 ]', ), ), number=5)
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#20 ]', ), ), number=5)
+# Save by fe1 on 2018_04_16-09.30.16; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['assignment2'].generateMesh()
+mdb.models['Model-1'].parts['assignment2'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['assignment2'].faces.getSequenceFromMask((
+    '[#f ]', ), ))
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=7.81, name='__profile__', 
+    sheetSize=312.4, transform=
+    mdb.models['Model-1'].parts['assignment2'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['assignment2'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(-60.0, 35.0, 0.0)))
+mdb.models['Model-1'].parts['assignment2'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], ))
+# Save by fe1 on 2018_04_16-09.32.50; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.33.01; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(10.0, -40.0), 
+    point2=(-10.0, -60.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[16], ))
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=7.81, name='__profile__', 
+    sheetSize=312.4, transform=
+    mdb.models['Model-1'].parts['assignment2'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['assignment2'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(-60.0, 35.0, 0.0)))
+mdb.models['Model-1'].parts['assignment2'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9]))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[12], ))
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by fe1 on 2018_04_16-09.40.52; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.41.17; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['assignment2'].features['Partition face-1'].sketch)
+mdb.models['Model-1'].parts['assignment2'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['assignment2'].features['Partition face-1'])
+mdb.models['Model-1'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[12], ))
+mdb.models['Model-1'].parts['assignment2'].features['Partition face-1'].setValues(
+    sketch=mdb.models['Model-1'].sketches['__edit__'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['assignment2'].regenerate()
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), number=25)
+mdb.models['Model-1'].parts['assignment2'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['assignment2'].edges.getSequenceFromMask(
+    ('[#60 ]', ), ), number=5)
+# Save by fe1 on 2018_04_16-09.43.57; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.43.58; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-09.43.58; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['assignment2'].generateMesh()
+# Save by fe1 on 2018_04_16-09.44.04; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['assignment2'].setElementType(elemTypes=(ElemType(
+    elemCode=CPS8R, elemLibrary=STANDARD), ElemType(elemCode=CPS6M, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['assignment2'].faces.getSequenceFromMask((
+    '[#7 ]', ), ), ))
+# Save by fe1 on 2018_04_16-09.45.08; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Global_Model', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', 
+    type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Global_Model'].submit(consistencyChecking=OFF)
+mdb.jobs['Global_Model']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'localhost.localdomain', 'handle': 0, 
+    'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING SURFACE UNDER *SURFACE INTERACTION.', 
+    'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': '/home/fe1/Desktop/FiniteElementsAnalysis/assignment2/Global_Model.odb', 
+    'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'localhost.localdomain', 'handle': 0, 
+    'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Global_Model', 'memory': 25.0})
+mdb.jobs['Global_Model']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Global_Model', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Global_Model']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Global_Model'})
+mdb.jobs['Global_Model']._Message(JOB_COMPLETED, {
+    'time': 'Mon Apr 16 09:46:51 2018', 'jobName': 'Global_Model'})
+# Save by fe1 on 2018_04_16-10.02.35; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-10.02.53; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_16-10.02.54; build 2016 2015_09_24-22.31.09 126547
