@@ -599,3 +599,260 @@ mdb.jobs['Global_Model']._Message(JOB_COMPLETED, {
 # Save by fe1 on 2018_04_16-10.02.35; build 2016 2015_09_24-22.31.09 126547
 # Save by fe1 on 2018_04_16-10.02.53; build 2016 2015_09_24-22.31.09 126547
 # Save by fe1 on 2018_04_16-10.02.54; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_19-18.41.33; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='Submodel_AB_1mm', objectToCopy=mdb.models['Model-1'])
+mdb.models['Submodel_AB_1mm'].setValues(globalJob='Global_Model.odb')
+del mdb.models['Submodel_AB_1mm'].boundaryConditions['BC-1']
+del mdb.models['Submodel_AB_1mm'].loads['Load-1']
+del mdb.models['Submodel_AB_1mm'].loads['Load-2']
+del mdb.models['Submodel_AB_1mm'].rootAssembly.features['assignment2-1']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(gridSpacing=7.81, name=
+    '__profile__', sheetSize=312.4)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'])
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].rectangle(point1=(
+    -25.3825, 13.6675), point2=(-95.6725, 76.1475))
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].rectangle(point1=(
+    -25.3825, 13.6675), point2=(64.4325, -33.1925))
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].FilletByRadius(curve1=
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'].geometry[13], curve2=
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'].geometry[3], 
+    nearPoint1=(-41.1732635498047, -5.07541465759277), nearPoint2=(
+    -49.9594650268555, -2.51109600067139), radius=1.0)
+#* A fillet cannot be created at a vertex shared by more than two entities.
+# Save by fe1 on 2018_04_19-18.56.21; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Submodel_AB_1mm'].sketches['__profile__']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'].sketch)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'], upToFeature=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'])
+del mdb.models['Submodel_AB_1mm'].sketches['__edit__']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Partition face-1'].sketch)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'], upToFeature=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Partition face-1'])
+del mdb.models['Submodel_AB_1mm'].sketches['__edit__']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'].sketch)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'], upToFeature=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].FilletByRadius(curve1=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[5], curve2=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[6], nearPoint1=
+    (-42.0438423156738, -4.88774299621582), nearPoint2=(-50.1262550354004, 
+    0.650463104248047), radius=1.0)
+# Save by fe1 on 2018_04_19-18.58.31; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'].setValues(
+    sketch=mdb.models['Submodel_AB_1mm'].sketches['__edit__'])
+del mdb.models['Submodel_AB_1mm'].sketches['__edit__']
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].regenerate()
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].deleteMesh(regions=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(gridSpacing=7.81, name=
+    '__profile__', sheetSize=312.4, transform=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].MakeSketchTransform(
+    sketchPlane=mdb.models['Submodel_AB_1mm'].parts['assignment2'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(-60.0, -15.0, 
+    0.0)))
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'])
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'].geometry[2], ))
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'].geometry[3], ))
+del mdb.models['Submodel_AB_1mm'].sketches['__profile__']
+del mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Partition face-1']
+# Save by fe1 on 2018_04_19-19.01.06; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_19-19.02.26; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'].sketch)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'], upToFeature=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].rectangle(point1=(-30.0, 
+    13.75), point2=(-86.25, 80.0))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].rectangle(point1=(-30.0, 
+    13.75), point2=(50.0, -25.0))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[13], ))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[16], ))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].Line(point1=(50.0, 13.75), 
+    point2=(-15.0, 13.75))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[17])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[15], entity2=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[17])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].Line(point1=(-15.0, 13.75), 
+    point2=(-15.0, -30.0))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[18])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[17], entity2=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[18])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].Line(point1=(-15.0, -30.0), 
+    point2=(51.25, -30.0))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[19])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[18], entity2=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'].geometry[19])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].Line(point1=(51.25, -30.0), 
+    point2=(50.0, 13.75))
+# Save by fe1 on 2018_04_19-19.06.02; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Submodel_AB_1mm'].sketches['__edit__']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'].sketch)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'], upToFeature=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'])
+del mdb.models['Submodel_AB_1mm'].sketches['__edit__']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'].sketch)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__edit__'], upToFeature=
+    mdb.models['Submodel_AB_1mm'].parts['assignment2'].features['Shell planar-1'])
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].rectangle(point1=(-91.25, 
+    86.25), point2=(-33.75, 18.75))
+mdb.models['Submodel_AB_1mm'].sketches['__edit__'].rectangle(point1=(-28.75, 
+    13.75), point2=(57.5, -37.5))
+# Save by fe1 on 2018_04_19-19.09.00; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_19-19.09.16; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Submodel_AB_1mm'].sketches['__edit__']
+mdb.models['Submodel_AB_1mm'].ConstrainedSketch(gridSpacing=7.81, name=
+    '__profile__', sheetSize=312.4)
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'])
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].rectangle(point1=(
+    -80.0525, 76.1475), point2=(-31.24, 15.62))
+mdb.models['Submodel_AB_1mm'].sketches['__profile__'].rectangle(point1=(-31.24, 
+    7.81), point2=(54.67, -37.0975))
+mdb.models['Submodel_AB_1mm'].parts['assignment2'].Cut(sketch=
+    mdb.models['Submodel_AB_1mm'].sketches['__profile__'])
+del mdb.models['Submodel_AB_1mm'].sketches['__profile__']
+# Save by fe1 on 2018_04_19-19.11.07; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_19-19.11.21; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_19-19.11.52; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Submodel_AB_1mm'].rootAssembly.Instance(dependent=ON, name=
+    'assignment2-1', part=mdb.models['Submodel_AB_1mm'].parts['assignment2'])
+mdb.models['Submodel_AB_1mm'].rootAssembly.Set(edges=
+    mdb.models['Submodel_AB_1mm'].rootAssembly.instances['assignment2-1'].edges.getSequenceFromMask(
+    ('[#10 ]', ), ), name='Set-4')
+mdb.models['Submodel_AB_1mm'].SubmodelBC(absoluteExteriorTolerance=None, 
+    createStepName='Step-1', dof=(1, 2), exteriorTolerance=0.05, 
+    globalDrivingRegion='', globalIncrement=0, globalStep='1', name='BC-1', 
+    region=mdb.models['Submodel_AB_1mm'].rootAssembly.sets['Set-4'], timeScale=
+    OFF)
+# Save by fe1 on 2018_04_19-19.15.14; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_19-19.15.15; build 2016 2015_09_24-22.31.09 126547
