@@ -1,0 +1,56 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+mdb.models['Model-1'].steps['Initial'].suppress()
+#* The Initial step cannot be suppressed.
+mdb.models['Model-1'].steps['Step-1'].setValues(nlgeom=ON)
+mdb.models['Model-1'].steps.changeKey(fromName='Step-1', toName='My_Step')
+mdb.models['Model-1'].parts['rigid_press'].ReferencePoint(point=
+    mdb.models['Model-1'].parts['rigid_press'].InterestingPoint(
+    mdb.models['Model-1'].parts['rigid_press'].edges[0], MIDDLE))
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['rigid_press'].features['2D Analytic rigid shell-1'].sketch)
+mdb.models['Model-1'].parts['rigid_press'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['rigid_press'].features['2D Analytic rigid shell-1'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-1', side2Edges=
+    mdb.models['Model-1'].rootAssembly.instances['rigid_press-1'].edges.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['Model-1'].RigidBody(name='press_part', refPointRegion=Region(
+    referencePoints=(
+    mdb.models['Model-1'].rootAssembly.instances['rigid_press-1'].referencePoints[2], 
+    )), surfaceRegion=mdb.models['Model-1'].rootAssembly.surfaces['Surf-1'])
+mdb.models['Model-1'].ContactProperty('IntProp-1')
+mdb.models['Model-1'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, constraintEnforcementMethod=DEFAULT, 
+    pressureOverclosure=HARD)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-2', side2Edges=
+    mdb.models['Model-1'].rootAssembly.instances['rigid_press-1'].edges.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-2', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='My_Step', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='IntProp-1', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-2'], name='Int-1', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-2'], sliding=
+    FINITE, thickness=ON)

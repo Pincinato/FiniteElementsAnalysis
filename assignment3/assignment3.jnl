@@ -1,0 +1,329 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-70.0, 10.0), 
+    point2=(31.25, 10.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(31.25, 10.0), 
+    point2=(31.25, 5.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(31.25, 5.0), point2=
+    (-70.0, 5.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-70.0, 5.0), point2=
+    (-70.0, 10.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    30.3413772583008, 19.5119285583496), value=1600.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -77.5595932006836, 4.86927700042725), value=100.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+# Save by fe1 on 2018_04_23-08.45.10; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=2000.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-650.0, 150.0), 
+    point2=(550.0, 50.0))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    554.357727050781, 208.785278320312), value=1600.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    633.442932128906, 50.8677062988281), value=100.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='plate', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['plate'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['plate'].features['Shell planar-1'].sketch)
+mdb.models['Model-1'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['plate'].features['Shell planar-1'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].Material(name='Material-plate')
+mdb.models['Model-1'].materials['Material-plate'].Plastic(table=((220.0, 0.0), 
+    ))
+mdb.models['Model-1'].materials['Material-plate'].Elastic(table=((70000.0, 
+    0.3), ))
+mdb.models['Model-1'].HomogeneousSolidSection(material='Material-plate', name=
+    'Section-plate', thickness=1600.0)
+mdb.models['Model-1'].parts['plate'].Set(faces=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), name='Set-1')
+mdb.models['Model-1'].parts['plate'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['plate'].sets['Set-1'], sectionName=
+    'Section-plate', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='plate-1', part=
+    mdb.models['Model-1'].parts['plate'])
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=2000.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-550.0, -200.0)
+    , point2=(-300.0, 200.0))
+mdb.models['Model-1'].sketches['__profile__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -295.8095703125, -269.522766113281), value=300.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+# Save by fe1 on 2018_04_23-09.15.11; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_23-09.15.15; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].dimensions[0], ))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -307.9765625, 283.188720703125), value=300.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+# Save by fe1 on 2018_04_23-09.16.17; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='rigid_press', 
+    type=ANALYTIC_RIGID_SURFACE)
+mdb.models['Model-1'].parts['rigid_press'].AnalyticRigidSurf2DPlanar(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by fe1 on 2018_04_23-09.19.18; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='rigid_press-1', 
+    part=mdb.models['Model-1'].parts['rigid_press'])
+del mdb.models['Model-1'].rootAssembly.features['rigid_press-1']
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='rigid_press-1', 
+    part=mdb.models['Model-1'].parts['rigid_press'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='rigid_press-2', 
+    part=mdb.models['Model-1'].parts['rigid_press'])
+del mdb.models['Model-1'].rootAssembly.features['rigid_press-2']
+# Save by fe1 on 2018_04_23-09.22.21; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('rigid_press-1', ), 
+    vector=(0.1, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('rigid_press-1', ), 
+    vector=(0.0, 100.0, 0.0))
+# Save by fe1 on 2018_04_23-09.24.43; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('rigid_press-1', ), 
+    vector=(0.0, 300.0, 0.0))
+# Save by fe1 on 2018_04_23-09.25.32; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_23-09.25.44; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='Set-1')
+mdb.models['Model-1'].YsymmBC(createStepName='Initial', localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-1'])
+# Save by fe1 on 2018_04_23-09.27.41; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_04_23-09.30.36; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['plate'].features['Shell planar-1'].sketch)
+mdb.models['Model-1'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['plate'].features['Shell planar-1'])
+mdb.models['Model-1'].sketches['__edit__'].dimensions[1].setValues(value=50)
+mdb.models['Model-1'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].dimensions[1], ))
+mdb.models['Model-1'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    612.947631835938, 48.7253723144531), value=50.0, vertex1=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[2])
+mdb.models['Model-1'].sketches['__edit__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[4])
+mdb.models['Model-1'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].dimensions[2], ))
+mdb.models['Model-1'].sketches['__edit__'].VerticalDimension(textPoint=(
+    -1081.52734375, 54.4775543212891), value=50.0, vertex1=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[1])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['plate'].features['Shell planar-1'].sketch)
+mdb.models['Model-1'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['plate'].features['Shell planar-1'])
+mdb.models['Model-1'].sketches['__edit__'].dimensions[1].setValues(value=50)
+mdb.models['Model-1'].sketches['__edit__'].dimensions[1].setValues(value=99)
+mdb.models['Model-1'].sketches['__edit__'].dimensions[1].setValues(value=50)
+mdb.models['Model-1'].sketches['__edit__'].PerpendicularConstraint(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[3])
+mdb.models['Model-1'].sketches['__edit__'].PerpendicularConstraint(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2])
+mdb.models['Model-1'].sketches['__edit__'].PerpendicularConstraint(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[3])
+mdb.models['Model-1'].sketches['__edit__'].EqualLengthConstraint(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[4])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['plate'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#5 ]', ), 
+    ), number=160)
+mdb.models['Model-1'].parts['plate'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#5 ]', ), 
+    ), number=100)
+mdb.models['Model-1'].parts['plate'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#a ]', ), 
+    ), number=16)
+mdb.models['Model-1'].parts['plate'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#a ]', ), 
+    ), number=10)
+mdb.models['Model-1'].parts['plate'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#a ]', ), 
+    ), number=8)
+mdb.models['Model-1'].parts['plate'].generateMesh()
+mdb.models['Model-1'].parts['plate'].setElementType(elemTypes=(ElemType(
+    elemCode=CPS4R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    hourglassControl=DEFAULT, distortionControl=DEFAULT), ElemType(
+    elemCode=CPS3, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), ))
+# Save by fe1 on 2018_04_23-09.41.14; build 2016 2015_09_24-22.31.09 126547
