@@ -1,0 +1,656 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Mon Apr 30 08:54:36 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=246.084625244141, 
+    height=121.657890319824)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(
+    pathName='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae')
+#: The model database "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Model-1'].parts['plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3018.45, 
+    farPlane=3384.68, width=1521.19, height=558.208, viewOffsetX=-26.4709, 
+    viewOffsetY=2.49662)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='My_Step')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+mdb.models['Model-1'].boundaryConditions['BC-4'].setValues(u2=-25.0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, loads=OFF, 
+    bcs=OFF, predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p1 = mdb.models['Model-1'].parts['plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3012.02, 
+    farPlane=3391.1, width=2165.41, height=797.144, viewOffsetX=232.449, 
+    viewOffsetY=14.6413)
+p = mdb.models['Model-1'].parts['plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#3 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#24 ]', ), )
+p.deleteSeeds(regions=pickedEdges)
+p = mdb.models['Model-1'].parts['plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#24 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=10.0, deviationFactor=0.1, 
+    constraint=FINER)
+p = mdb.models['Model-1'].parts['plate']
+p.generateMesh()
+elemType1 = mesh.ElemType(elemCode=CPE4, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPE3, elemLibrary=STANDARD)
+p = mdb.models['Model-1'].parts['plate']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#3 ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.Job(name='Job-2', model='Model-1', description='', type=ANALYSIS, 
+    atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, 
+    memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['Model-1'].boundaryConditions['BC-4'].setValues(u2=-50.0)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3192.92, 
+    farPlane=3542.81, width=1499.07, height=550.091, viewOffsetX=-45.42, 
+    viewOffsetY=-11.4704)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Too many increments needed to complete the step
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3202.44, 
+    farPlane=3533.28, width=1415.12, height=519.285, viewOffsetX=-42.3788, 
+    viewOffsetY=-16.2555)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['My_Step'].setValues(maxNumInc=1000)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+mdb.models['Model-1'].boundaryConditions['BC-4'].setValues(u2=-25.0)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Job Job-2: Abaqus/Standard completed successfully.
+#: Job Job-2 completed successfully. 
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3681.68, 
+    farPlane=5720.45, width=1222.09, height=421.213, viewOffsetX=264.638, 
+    viewOffsetY=-34.1606)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-1'].parts['rigid_press']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['rigid_press']
+s = p.features['2D Analytic rigid shell-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s1 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s1.geometry, s1.vertices, s1.dimensions, s1.constraints
+s1.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s1, 
+    upToFeature=p.features['2D Analytic rigid shell-1'], filter=COPLANAR_EDGES)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1160.32, 
+    farPlane=1238.97, width=336.104, height=123.335, cameraPosition=(-483.203, 
+    -164.524, 1199.64), cameraTarget=(-483.203, -164.524, 0))
+s1.FilletByRadius(radius=3.0, curve1=g[5], nearPoint1=(-528.623779296875, 
+    -200.775894165039), curve2=g[2], nearPoint2=(-550.061157226562, 
+    -186.061279296875))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1108.36, 
+    farPlane=1290.93, width=676.66, height=248.304, cameraPosition=(-12.6634, 
+    -140.561, 1199.64), cameraTarget=(-12.6634, -140.561, 0))
+s1.FilletByRadius(radius=3.0, curve1=g[5], nearPoint1=(-286.991058349609, 
+    -200.617034912109), curve2=g[4], nearPoint2=(-249.227172851562, 
+    -184.458404541016))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+s1.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__edit__']
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Job Job-2: Abaqus/Standard completed successfully.
+#: Job Job-2 completed successfully. 
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3330.78, 
+    farPlane=3404.95, width=316.986, height=116.32, viewOffsetX=-134.663, 
+    viewOffsetY=-115.696)
+p1 = mdb.models['Model-1'].parts['rigid_press']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['rigid_press']
+s = p.features['2D Analytic rigid shell-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s2 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s2.geometry, s2.vertices, s2.dimensions, s2.constraints
+s2.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s2, 
+    upToFeature=p.features['2D Analytic rigid shell-1'], filter=COPLANAR_EDGES)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1120.23, 
+    farPlane=1279.06, width=678.692, height=249.05, cameraPosition=(-445.999, 
+    -85.2817, 1199.64), cameraTarget=(-445.999, -85.2817, 0))
+s2.FilletByRadius(radius=3.0, curve1=g[5], nearPoint1=(-495.509979248047, 
+    -198.461624145508), curve2=g[2], nearPoint2=(-549.079345703125, 
+    -167.668029785156))
+s2.FilletByRadius(radius=3.0, curve1=g[5], nearPoint1=(-349.953002929688, 
+    -199.001861572266), curve2=g[4], nearPoint2=(-248.225463867188, 
+    -172.530181884766))
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+s2.unsetPrimaryObject()
+p = mdb.models['Model-1'].parts['rigid_press']
+p.features['2D Analytic rigid shell-1'].setValues(sketch=s2)
+del mdb.models['Model-1'].sketches['__edit__']
+p = mdb.models['Model-1'].parts['rigid_press']
+p.regenerate()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=863.571, 
+    farPlane=1136.43, width=1210.7, height=444.272, viewOffsetX=53.9478, 
+    viewOffsetY=-1.62748)
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3740.86, 
+    farPlane=5661.27, width=1085.05, height=373.982, viewOffsetX=-33.6567, 
+    viewOffsetY=-54.7554)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['My_Step'].setValues(maxNumInc=500)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3338.1, 
+    farPlane=3397.62, width=254.379, height=93.3457, viewOffsetX=-158.739, 
+    viewOffsetY=-117.422)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['My_Step'].setValues(timePeriod=10.0, 
+    minInc=0.0001, maxInc=10.0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['My_Step'].setValues(timePeriod=10.0, 
+    minInc=0.0001, maxInc=10.0)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3322.42, 
+    farPlane=3413.3, width=388.117, height=142.422, viewOffsetX=-132.444, 
+    viewOffsetY=-115.116)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3698.13, 
+    farPlane=5704, width=1208.21, height=416.43, viewOffsetX=-8.03178, 
+    viewOffsetY=-108.114)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['My_Step'].setValues(timePeriod=0.1, minInc=1e-06, 
+    maxInc=0.1)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3272.19, 
+    farPlane=3463.54, width=947.572, height=347.717, viewOffsetX=-12.028, 
+    viewOffsetY=-106.259)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3765.66, 
+    farPlane=5636.47, width=571.733, height=197.058, viewOffsetX=-6.56564, 
+    viewOffsetY=-122.951)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, interactions=ON, constraints=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb'])
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(normals=ON)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    normals=OFF)
+session.viewports['Viewport: 1'].odbDisplay.superimposeOptions.setValues(
+    normals=ON)
+session.viewports['Viewport: 1'].view.fitView()
+session.viewports['Viewport: 1'].odbDisplay.superimposeOptions.setValues(
+    normalDisplay=SURFACE)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(normals=ON, 
+    normalDisplay=SURFACE)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    normalDisplay=ELEMENT)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    normalDisplay=SURFACE)
+leaf = dgo.LeafFromSurfaceSets(surfaceSets=(
+    'RIGID_PRESS-1.ASSEMBLY_RIGID_PRESS-1_SURF-3', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#: Warning: The selected Primary Variable is not available in the current frame for any elements in the current display group.
+leaf = dgo.LeafFromSurfaceSets(surfaceSets=('RIGID_PRESS-1.SURF-3', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#: Warning: The selected Primary Variable is not available in the current frame for any elements in the current display group.
+leaf = dgo.LeafFromSurfaceSets(surfaceSets=('S_SURF-1', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.LeafFromSurfaceSets(surfaceSets=('Rigid Reference Node #343', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#: Warning: The selected Primary Variable is not available in the current frame for any elements in the current display group.
+leaf = dgo.LeafFromPartInstance(partInstanceName=('RIGID_PRESS-1', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#: Warning: The selected Primary Variable is not available in the current frame for any elements in the current display group.
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+leaf = dgo.Leaf(leafType=DEFAULT_MODEL)
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3975.16, 
+    farPlane=5851.11, width=613.929, height=211.601, viewOffsetX=43.5401, 
+    viewOffsetY=-164.579)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['Model-1'].interactions['Int-1'].move('My_Step', 'Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.models['Model-1'].interactions['Int-1'].setValues(initialClearance=OMIT, 
+    surfaceSmoothing=NONE, adjustMethod=NONE, sliding=FINITE, 
+    enforcement=NODE_TO_SURFACE, thickness=OFF, supplementaryContact=SELECTIVE, 
+    smooth=0.2, bondingSet=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+p1 = mdb.models['Model-1'].parts['rigid_press']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['rigid_press']
+s = p.features['2D Analytic rigid shell-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s1 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s1.geometry, s1.vertices, s1.dimensions, s1.constraints
+s1.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s1, 
+    upToFeature=p.features['2D Analytic rigid shell-1'], filter=COPLANAR_EDGES)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1190.64, 
+    farPlane=1318.33, width=556.768, height=204.309, cameraPosition=(-349.254, 
+    -181.267, 1254.49), cameraTarget=(-349.254, -181.267, 0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1235.65, 
+    farPlane=1273.33, width=164.253, height=60.2734, cameraPosition=(-542.595, 
+    -194.341, 1254.49), cameraTarget=(-542.595, -194.341, 0))
+s1.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__edit__']
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+i1 = mdb.models['Model-1'].rootAssembly.allInstances['rigid_press-1']
+leaf = dgm.LeafFromInstance(instances=(i1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+session.viewports['Viewport: 1'].view.fitView()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=921.038, 
+    farPlane=1078.96, width=675.907, height=248.028, viewOffsetX=-48.9818, 
+    viewOffsetY=-54.9712)
+session.viewports['Viewport: 1'].view.fitView()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=984.345, 
+    farPlane=1015.66, width=136.858, height=50.2208, viewOffsetX=-146.095, 
+    viewOffsetY=-195.054)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, interactions=OFF, constraints=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, interactions=ON, constraints=ON, 
+    engineeringFeatures=ON)
+mdb.models['Model-1'].interactions['Int-1'].setValues(initialClearance=OMIT, 
+    surfaceSmoothing=NONE, adjustMethod=NONE, sliding=FINITE, 
+    enforcement=SURFACE_TO_SURFACE, thickness=ON, contactTracking=TWO_CONFIG, 
+    smooth=0.2, bondingSet=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Time increment required is less than the minimum specified
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=38 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+leaf = dgo.Leaf(leafType=ALL_SURFACES)
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.Leaf(leafType=DEFAULT_MODEL)
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    normals=OFF)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=29 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3762.92, 
+    farPlane=5639.21, width=614.922, height=211.944, viewOffsetX=50.6815, 
+    viewOffsetY=-174.236)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].interactions['Int-1'].setValues(initialClearance=OMIT, 
+    surfaceSmoothing=NONE, adjustMethod=NONE, sliding=FINITE, 
+    enforcement=NODE_TO_SURFACE, thickness=OFF, supplementaryContact=SELECTIVE, 
+    smooth=0.2, bondingSet=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=898.273, 
+    farPlane=1101.73, width=903.382, height=331.501, viewOffsetX=43.7961, 
+    viewOffsetY=-75.1904)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+mdb.models['Model-1'].interactions['Int-1'].setValues(initialClearance=OMIT, 
+    surfaceSmoothing=NONE, adjustMethod=NONE, sliding=SMALL, 
+    enforcement=SURFACE_TO_SURFACE, thickness=ON, 
+    supplementaryContact=SELECTIVE, smooth=0.2, bondingSet=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Too many attempts made for this increment
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='My_Step')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=907.469, 
+    farPlane=1092.53, width=792.278, height=290.731, viewOffsetX=28.4942, 
+    viewOffsetY=-82.2352)
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['rigid_press-1'].edges
+side2Edges1 = s1.getSequenceFromMask(mask=('[#3f ]', ), )
+a.Surface(side2Edges=side2Edges1, name='m_Surf-1')
+#: The surface 'm_Surf-1' has been edited (6 edges).
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+#: The job input file "Job-2.inp" has been submitted for analysis.
+#: Job Job-2: Analysis Input File Processor completed successfully.
+#: Error in job Job-2: Too many attempts made for this increment
+#: Error in job Job-2: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job Job-2: Abaqus/Standard aborted due to errors.
+#: Error in job Job-2: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Job-2 aborted due to errors.
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/Job-2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+del session.viewports['Viewport: 1']
+#* CanvasError: SystemError: the current viewport may not be deleted.
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae".
+del session.viewports['Viewport: 1']
+#* CanvasError: SystemError: the current viewport may not be deleted.
