@@ -1,0 +1,228 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Mon Apr 30 23:20:58 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=246.084625244141, 
+    height=121.657890319824)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(
+    pathName='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae')
+#: The model database "/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/assignment3.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Model-1'].parts['plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_finite_sliding.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_finite_sliding.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_finite_sliding.odb'])
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].tangentialBehavior.setValues(
+    formulation=FRICTIONLESS)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].normalBehavior.setValues(
+    pressureOverclosure=HARD, allowSeparation=OFF, 
+    constraintEnforcementMethod=DEFAULT)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['cpe4_surfaceToSurface_finite_sliding'].submit(
+    consistencyChecking=OFF)
+#: The job input file "cpe4_surfaceToSurface_finite_sliding.inp" has been submitted for analysis.
+#: Job cpe4_surfaceToSurface_finite_sliding: Analysis Input File Processor completed successfully.
+#: Job cpe4_surfaceToSurface_finite_sliding: Abaqus/Standard completed successfully.
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_finite_sliding.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_finite_sliding.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+#: Job cpe4_surfaceToSurface_finite_sliding completed successfully. 
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].tangentialBehavior.setValues(
+    formulation=FRICTIONLESS)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].normalBehavior.setValues(
+    pressureOverclosure=HARD, allowSeparation=ON, 
+    constraintEnforcementMethod=DEFAULT)
+mdb.models['Model-1'].interactions['Int-1'].setValues(initialClearance=OMIT, 
+    adjustMethod=NONE, sliding=SMALL, enforcement=SURFACE_TO_SURFACE, 
+    thickness=ON, supplementaryContact=SELECTIVE, bondingSet=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.Job(name='cpe4_surfaceToSurface_smal_sliding', model='Model-1', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['cpe4_surfaceToSurface_smal_sliding'].submit(consistencyChecking=OFF)
+#: The job input file "cpe4_surfaceToSurface_smal_sliding.inp" has been submitted for analysis.
+#: Job cpe4_surfaceToSurface_smal_sliding: Analysis Input File Processor completed successfully.
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_finite_sliding.odb'])
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_smal_sliding.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_smal_sliding.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+#: Error in job cpe4_surfaceToSurface_smal_sliding: Time increment required is less than the minimum specified
+#: Error in job cpe4_surfaceToSurface_smal_sliding: Too many attempts made for this increment
+#: Error in job cpe4_surfaceToSurface_smal_sliding: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job cpe4_surfaceToSurface_smal_sliding: Abaqus/Standard aborted due to errors.
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Error in job cpe4_surfaceToSurface_smal_sliding: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job cpe4_surfaceToSurface_smal_sliding aborted due to errors.
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='My_Step')
+mdb.models['Model-1'].steps['My_Step'].setValues(maxNumInc=20000)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['cpe4_surfaceToSurface_smal_sliding'].submit(consistencyChecking=OFF)
+#: The job input file "cpe4_surfaceToSurface_smal_sliding.inp" has been submitted for analysis.
+#: Job cpe4_surfaceToSurface_smal_sliding: Analysis Input File Processor completed successfully.
+#: Error in job cpe4_surfaceToSurface_smal_sliding: Time increment required is less than the minimum specified
+#: Error in job cpe4_surfaceToSurface_smal_sliding: Too many attempts made for this increment
+#: Error in job cpe4_surfaceToSurface_smal_sliding: THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.
+#: Job cpe4_surfaceToSurface_smal_sliding: Abaqus/Standard aborted due to errors.
+#: Error in job cpe4_surfaceToSurface_smal_sliding: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job cpe4_surfaceToSurface_smal_sliding aborted due to errors.
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_smal_sliding.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment3/cpe4_surfaceToSurface_smal_sliding.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     2
+#: Number of Meshes:             2
+#: Number of Element Sets:       4
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+p1 = mdb.models['Model-1'].parts['rigid_press']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['rigid_press']
+s = p.features['2D Analytic rigid shell-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s1 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s1.geometry, s1.vertices, s1.dimensions, s1.constraints
+s1.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s1, 
+    upToFeature=p.features['2D Analytic rigid shell-1'], filter=COPLANAR_EDGES)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1119.35, 
+    farPlane=1315.04, width=836.188, height=306.844, cameraPosition=(-579.388, 
+    -55.9107, 1217.19), cameraTarget=(-579.388, -55.9107, 0))
+s1.FilletByRadius(radius=3.01, curve1=g[2], nearPoint1=(-550.387939453125, 
+    -164.071395874023), curve2=g[5], nearPoint2=(-479.720825195312, 
+    -198.682830810547))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1130.52, 
+    farPlane=1303.87, width=878.893, height=322.514, cameraPosition=(-581.986, 
+    -47.6586, 1217.19), cameraTarget=(-581.986, -47.6586, 0))
+session.viewports['Viewport: 1'].view.fitView()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1059.29, 
+    farPlane=1408.95, width=1555.75, height=570.889, cameraPosition=(-406.107, 
+    52.6286, 1234.12), cameraTarget=(-406.107, 52.6286, 0))
+s1.delete(objectList=(d[3], ))
+s1.delete(objectList=(d[4], ))
+s1.delete(objectList=(d[2], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1221.96, 
+    farPlane=1246.28, width=103.941, height=38.1416, cameraPosition=(-538.546, 
+    -187.318, 1234.12), cameraTarget=(-538.546, -187.318, 0))
+s1.delete(objectList=(c[21], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1191.72, 
+    farPlane=1276.52, width=362.379, height=132.977, cameraPosition=(-296.004, 
+    -188.169, 1234.12), cameraTarget=(-296.004, -188.169, 0))
+s1.FilletByRadius(radius=3.01, curve1=g[5], nearPoint1=(-273.035217285156, 
+    -199.851470947266), curve2=g[4], nearPoint2=(-249.344161987305, 
+    -181.967391967773))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1234.02, 
+    farPlane=1234.22, width=0.862869, height=0.316634, cameraPosition=(
+    -250.089, -197.102, 1234.12), cameraTarget=(-250.089, -197.102, 0))
+s1.delete(objectList=(g[7], ))
+s1.delete(objectList=(g[9], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1233.9, 
+    farPlane=1234.35, width=2.00365, height=0.73525, cameraPosition=(-249.942, 
+    -197.153, 1234.12), cameraTarget=(-249.942, -197.153, 0))
+session.viewports['Viewport: 1'].view.fitView()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1194.09, 
+    farPlane=1194.67, width=2.17831, height=0.799342, cameraPosition=(-548.913, 
+    -198.551, 1194.38), cameraTarget=(-548.913, -198.551, 0))
+s1.delete(objectList=(g[6], ))
+s1.delete(objectList=(g[8], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1192.42, 
+    farPlane=1196.34, width=17.41, height=6.3887, cameraPosition=(-546.946, 
+    -197.839, 1194.38), cameraTarget=(-546.946, -197.839, 0))
+del session.viewports['Viewport: 1']
+#* CanvasError: SystemError: the current viewport may not be deleted.

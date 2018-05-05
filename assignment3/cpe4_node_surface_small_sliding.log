@@ -1,0 +1,23 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB cpe4_node_surface_small_sliding
+Abaqus 3DEXPERIENCE R2016x
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server 130.92.125.156.
+<475 out of 480 licenses remain available>.
+Begin Analysis Input File Processor
+Wed May  2 21:12:59 2018
+Run pre
+Wed May  2 21:13:01 2018
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+Wed May  2 21:13:01 2018
+Run standard
+Wed May  2 21:13:07 2018
+Begin MFS->SFS and SIM cleanup
+Wed May  2 21:13:07 2018
+Run SMASimUtility
+Wed May  2 21:13:07 2018
+End MFS->SFS and SIM cleanup
+Abaqus Error: Abaqus/Standard Analysis exited with an error - Please see the 
+message file for possible error messages if the file exists.
+Abaqus/Analysis exited with errors
