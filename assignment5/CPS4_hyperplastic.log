@@ -1,0 +1,22 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB CPS4_hyperplastic
+Abaqus 3DEXPERIENCE R2016x
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server 130.92.125.156.
+<467 out of 480 licenses remain available>.
+Begin Analysis Input File Processor
+Thu May 10 17:40:12 2018
+Run pre
+Thu May 10 17:40:16 2018
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+Thu May 10 17:40:16 2018
+Run standard
+Thu May 10 17:40:21 2018
+End Abaqus/Standard Analysis
+Begin MFS->SFS and SIM cleanup
+Thu May 10 17:40:21 2018
+Run SMASimUtility
+Thu May 10 17:40:21 2018
+End MFS->SFS and SIM cleanup
+Abaqus JOB CPS4_hyperplastic COMPLETED

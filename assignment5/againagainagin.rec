@@ -1,0 +1,93 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.makeIndependent(instances=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-4'], ))
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=CPS4R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    hourglassControl=DEFAULT, distortionControl=DEFAULT), ElemType(
+    elemCode=CPS3, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-4'].faces.getSequenceFromMask(
+    ('[#1ff ]', ), ), ))
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'U', 'RF', 'RT', 'CF'))
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+mdb.jobs['CPS4_hyperplastic']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'localhost.localdomain', 'handle': 0, 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'WHENEVER A TRANSLATION (ROTATION) DOF AT A NODE IS CONSTRAINED BY A KINEMATIC COUPLING DEFINITION THE TRANSLATION (ROTATION) DOFS FOR THAT NODE CANNOT BE INCLUDED IN ANY OTHER CONSTRAINT INCLUDING MPCS, RIGID BODIES, ETC.', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'MPCS (EXTERNAL or INTERNAL, including those generated from rigid body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL ACTIVATE ADDITIONAL DEGREES OF FREEDOM', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '8 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': '/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'localhost.localdomain', 'handle': 0, 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'CPS4_hyperplastic', 'memory': 24.0})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.1, 
+    'attempts': 1, 'timeIncrement': 0.1, 'increment': 1, 'stepTime': 0.1, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.2, 
+    'attempts': 1, 'timeIncrement': 0.1, 'increment': 2, 'stepTime': 0.2, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.35, 
+    'attempts': 1, 'timeIncrement': 0.15, 'increment': 3, 'stepTime': 0.35, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.575, 
+    'attempts': 1, 'timeIncrement': 0.225, 'increment': 4, 'stepTime': 0.575, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.9125, 
+    'attempts': 1, 'timeIncrement': 0.3375, 'increment': 5, 'stepTime': 0.9125, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 1.0, 
+    'attempts': 1, 'timeIncrement': 0.0874999999999999, 'increment': 6, 
+    'stepTime': 1.0, 'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(JOB_COMPLETED, {
+    'time': 'Thu May 10 17:40:22 2018', 'jobName': 'CPS4_hyperplastic'})

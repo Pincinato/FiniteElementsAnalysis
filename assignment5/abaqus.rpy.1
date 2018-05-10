@@ -1,0 +1,401 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Wed May  9 09:08:26 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=386.629638671875, 
+    height=250.74186706543)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(pathName='/home/fe1/PrajitKadavil/Assignment5/againagainagin.cae')
+#: The model database "/home/fe1/PrajitKadavil/Assignment5/againagainagin.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+#--- Recover file: 'againagainagin.rec' ---
+# -*- coding: mbcs -*- 
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(
+    edges=mdb.models['Model-1'].rootAssembly.instances['Part-1-2'].edges.getSequenceFromMask(
+    ('[#8000 ]', ), ), name='Set-3')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, 
+    name='BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'], 
+    u1=0.0, u2=20.0, ur3=0.0)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+mdb.jobs['CPS4_hyperplastic']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'localhost.localdomain', 'handle': 0, 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'WHENEVER A TRANSLATION (ROTATION) DOF AT A NODE IS CONSTRAINED BY A KINEMATIC COUPLING DEFINITION THE TRANSLATION (ROTATION) DOFS FOR THAT NODE CANNOT BE INCLUDED IN ANY OTHER CONSTRAINT INCLUDING MPCS, RIGID BODIES, ETC.', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'MPCS (EXTERNAL or INTERNAL, including those generated from rigid body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL ACTIVATE ADDITIONAL DEGREES OF FREEDOM', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '20 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof of 13 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof.', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': '/home/fe1/PrajitKadavil/Assignment5/CPS4_hyperplastic.odb', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'localhost.localdomain', 'handle': 0, 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THERE ARE 2 UNCONNECTED REGIONS IN THE MODEL.', 
+    'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'CPS4_hyperplastic', 'memory': 25.0})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.1, 
+    'attempts': 1, 'timeIncrement': 0.1, 'increment': 1, 'stepTime': 0.1, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.2, 
+    'attempts': 1, 'timeIncrement': 0.1, 'increment': 2, 'stepTime': 0.2, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.35, 
+    'attempts': 1, 'timeIncrement': 0.15, 'increment': 3, 'stepTime': 0.35, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.575, 
+    'attempts': 1, 'timeIncrement': 0.225, 'increment': 4, 'stepTime': 0.575, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 0.9125, 
+    'attempts': 1, 'timeIncrement': 0.3375, 'increment': 5, 'stepTime': 0.9125, 
+    'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(STATUS, {'totalTime': 1.0, 
+    'attempts': 1, 'timeIncrement': 0.0874999999999999, 'increment': 6, 
+    'stepTime': 1.0, 'step': 1, 'jobName': 'CPS4_hyperplastic', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CPS4_hyperplastic']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CPS4_hyperplastic'})
+mdb.jobs['CPS4_hyperplastic']._Message(JOB_COMPLETED, {
+    'time': 'Mon May  7 10:02:44 2018', 'jobName': 'CPS4_hyperplastic'})
+del mdb.models['Model-1'].rootAssembly.features['Part-1-2']
+#--- End of Recover file ------
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, interactions=ON, constraints=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, interactions=OFF, constraints=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+del mdb.models['Model-1'].boundaryConditions['BC-2']
+a = mdb.models['Model-1'].rootAssembly
+e1 = a.instances['Part-1-1'].edges
+edges1 = e1.getSequenceFromMask(mask=('[#8000 ]', ), )
+region = a.Set(edges=edges1, name='Set-4')
+mdb.models['Model-1'].DisplacementBC(name='BC-2', createStepName='Step-1', 
+    region=region, u1=0.0, u2=20.0, ur3=0.0, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF, 
+    optimizationTasks=ON, geometricRestrictions=ON, stopConditions=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Job CPS4_hyperplastic: Analysis Input File Processor completed successfully.
+#: Job CPS4_hyperplastic: Abaqus/Standard completed successfully.
+#: Job CPS4_hyperplastic completed successfully. 
+o3 = session.openOdb(name='/home/fe1/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=105.019, 
+    farPlane=122.278, width=118.698, height=59.3994, viewOffsetX=5.00077, 
+    viewOffsetY=-2.32611)
+del mdb.models['Model-1'].boundaryConditions['BC-2']
+a = mdb.models['Model-1'].rootAssembly
+r1 = a.referencePoints
+refPoints1=(r1[4], )
+region = a.Set(referencePoints=refPoints1, name='Set-5')
+mdb.models['Model-1'].DisplacementBC(name='BC-2', createStepName='Step-1', 
+    region=region, u1=0.0, u2=20.0, ur3=0.0, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+a1 = mdb.models['Model-1'].rootAssembly
+p = mdb.models['Model-1'].parts['Part-1']
+a1.Instance(name='Part-1-2', part=p, dependent=ON)
+a1 = mdb.models['Model-1'].rootAssembly
+p = mdb.models['Model-1'].parts['Part-1']
+a1.Instance(name='Part-1-3', part=p, dependent=ON)
+a1 = mdb.models['Model-1'].rootAssembly
+p = mdb.models['Model-1'].parts['Part-1']
+a1.Instance(name='Part-1-4', part=p, dependent=ON)
+a = mdb.models['Model-1'].rootAssembly
+del a.features['Part-1-3']
+a = mdb.models['Model-1'].rootAssembly
+del a.features['Part-1-2']
+a = mdb.models['Model-1'].rootAssembly
+a.deleteFeatures(('Part-1-1', 'RP-1', ))
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Error in job CPS4_hyperplastic: in keyword *COUPLING, file "CPS4_hyperplastic.inp", line 1005: Unknown assembly set M_SET-1
+#: Error in job CPS4_hyperplastic: in keyword *BOUNDARY, file "CPS4_hyperplastic.inp", line 1025: Unknown assembly node set SET-2
+#: Error in job CPS4_hyperplastic: in keyword *BOUNDARY, file "CPS4_hyperplastic.inp", line 1028: Unknown assembly node set SET-5
+#: Error in job CPS4_hyperplastic: in keyword *BOUNDARY, file "CPS4_hyperplastic.inp", line 1028: Unknown assembly node set SET-5
+#: Error in job CPS4_hyperplastic: in keyword *BOUNDARY, file "CPS4_hyperplastic.inp", line 1028: Unknown assembly node set SET-5
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_M_SET-1 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: UNABLE TO LOCATE NODE SET ASSEMBLY_M_SET-1. THE NODE SET MUST HAVE BEEN PREVIOUSLY DEFINED.
+#: Error in job CPS4_hyperplastic: THE REFERENCE NODE 0 ON THE *COUPLING OPTION IS NOT DEFINED.
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_M_SET-1 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: UNABLE TO LOCATE NODE SET ASSEMBLY_M_SET-1. THE NODE SET MUST HAVE BEEN PREVIOUSLY DEFINED.
+#: Error in job CPS4_hyperplastic: THE REFERENCE NODE 0 ON THE *COUPLING OPTION IS NOT DEFINED.
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_M_SET-1 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: UNABLE TO LOCATE NODE SET ASSEMBLY_M_SET-1. THE NODE SET MUST HAVE BEEN PREVIOUSLY DEFINED.
+#: Error in job CPS4_hyperplastic: THE REFERENCE NODE 0 ON THE *COUPLING OPTION IS NOT DEFINED.
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_M_SET-1 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: UNABLE TO LOCATE NODE SET ASSEMBLY_M_SET-1. THE NODE SET MUST HAVE BEEN PREVIOUSLY DEFINED.
+#: Error in job CPS4_hyperplastic: THE REFERENCE NODE 0 ON THE *COUPLING OPTION IS NOT DEFINED.
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_M_SET-1 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: UNABLE TO LOCATE NODE SET ASSEMBLY_M_SET-1. THE NODE SET MUST HAVE BEEN PREVIOUSLY DEFINED.
+#: Error in job CPS4_hyperplastic: THE REFERENCE NODE 0 ON THE *COUPLING OPTION IS NOT DEFINED.
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-2 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-5 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-5 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-5 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-2 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL
+#: Error in job CPS4_hyperplastic: A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-5 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL
+#: Error in job CPS4_hyperplastic: A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-5 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL
+#: Error in job CPS4_hyperplastic: A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-5 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-2 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-5 HAS NOT BEEN DEFINED
+#: Error in job CPS4_hyperplastic: NODE SET ASSEMBLY_SET-5 HAS NOT BEEN DEFINED
+#: Job CPS4_hyperplastic: Analysis Input File Processor aborted due to errors.
+#: Error in job CPS4_hyperplastic: Analysis Input File Processor exited with an error.
+#: Job CPS4_hyperplastic aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Model-1'].boundaryConditions['BC-2']
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+a = mdb.models['Model-1'].rootAssembly
+e1 = a.instances['Part-1-4'].edges
+edges1 = e1.getSequenceFromMask(mask=('[#400000 ]', ), )
+region = a.Set(edges=edges1, name='Set-6')
+mdb.models['Model-1'].EncastreBC(name='BC-1', createStepName='Step-1', 
+    region=region, localCsys=None)
+a = mdb.models['Model-1'].rootAssembly
+e1 = a.instances['Part-1-4'].edges
+edges1 = e1.getSequenceFromMask(mask=('[#8000 ]', ), )
+region = a.Set(edges=edges1, name='Set-7')
+mdb.models['Model-1'].DisplacementBC(name='BC-2', createStepName='Step-1', 
+    region=region, u1=0.0, u2=20.0, ur3=0.0, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+a = mdb.models['Model-1'].rootAssembly
+e1 = a.instances['Part-1-4'].edges
+a.ReferencePoint(point=a.instances['Part-1-4'].InterestingPoint(edge=e1[15], 
+    rule=MIDDLE))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, interactions=ON, constraints=ON, 
+    engineeringFeatures=ON)
+del mdb.models['Model-1'].constraints['Constraint-1']
+#: Warning: Cannot continue yet--complete the step or cancel the procedure.
+a = mdb.models['Model-1'].rootAssembly
+r1 = a.referencePoints
+refPoints1=(r1[21], )
+region1=a.Set(referencePoints=refPoints1, name='m_Set-8')
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Part-1-4'].edges
+side1Edges1 = s1.getSequenceFromMask(mask=('[#8000 ]', ), )
+region2=a.Surface(side1Edges=side1Edges1, name='s_Surf-2')
+mdb.models['Model-1'].Coupling(name='Constraint-1', controlPoint=region1, 
+    surface=region2, influenceRadius=WHOLE_SURFACE, couplingType=KINEMATIC, 
+    localCsys=None, u1=ON, u2=ON, ur3=ON)
+del mdb.models['Model-1'].rootAssembly.sets['m_Set-1']
+del mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-1']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Job CPS4_hyperplastic: Analysis Input File Processor completed successfully.
+#: Job CPS4_hyperplastic: Abaqus/Standard completed successfully.
+#: Job CPS4_hyperplastic completed successfully. 
+o3 = session.openOdb(name='/home/fe1/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Model-1'].boundaryConditions['BC-2']
+a = mdb.models['Model-1'].rootAssembly
+r1 = a.referencePoints
+refPoints1=(r1[21], )
+region = a.Set(referencePoints=refPoints1, name='Set-8')
+mdb.models['Model-1'].DisplacementBC(name='BC-2', createStepName='Step-1', 
+    region=region, u1=0.0, u2=20.0, ur3=0.0, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Job CPS4_hyperplastic: Analysis Input File Processor completed successfully.
+#: Job CPS4_hyperplastic: Abaqus/Standard completed successfully.
+#: Job CPS4_hyperplastic completed successfully. 
+o3 = session.openOdb(name='/home/fe1/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=102.975, 
+    farPlane=187.899, width=89.0387, height=46.0757, viewOffsetX=0.178129, 
+    viewOffsetY=-0.24589)
+session.viewports['Viewport: 1'].view.fitView()
+mdb.save()
+#: The model database has been saved to "/home/fe1/PrajitKadavil/Assignment5/againagainagin.cae".
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'))
+odb = session.odbs['/home/fe1/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL), ('U', NODAL), ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+odb = session.odbs['/home/fe1/CPS4_hyperplastic.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'RF', NODAL), ('U', NODAL), ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+xyp = session.XYPlot('XYPlot-1')
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), appendMode=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['_U:U2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), appendMode=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['_U:U2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), appendMode=True)
+odb = session.odbs['/home/fe1/CPS4_hyperplastic.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
