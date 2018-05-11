@@ -1059,6 +1059,6 @@ Set-8, 6, 6
 ** HISTORY OUTPUT: H-Output-1
 ** 
 *Output, history, variable=PRESELECT
-*NODE PRINT, NSET=_PickedSet8, FREQ=1
+*NODE PRINT, NSET=m_Set-8, FREQ=1
 U2,RF2
 *End Step
