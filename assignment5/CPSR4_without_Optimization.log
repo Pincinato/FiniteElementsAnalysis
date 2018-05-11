@@ -1,13 +1,13 @@
 Analysis initiated from SIMULIA established products
-Abaqus JOB CPS4_hyperplastic
+Abaqus JOB CPSR4_without_Optimization
 Abaqus 3DEXPERIENCE R2016x
 Abaqus License Manager checked out the following licenses:
 Abaqus/Standard checked out 5 tokens from Flexnet server 130.92.125.156.
 <475 out of 480 licenses remain available>.
 Begin Analysis Input File Processor
-Fri May 11 12:05:41 2018
+Fri May 11 12:17:17 2018
 Run pre
-Fri May 11 12:05:55 2018
+Fri May 11 12:17:30 2018
 Abaqus Error: The executable pre
 aborted with system error "Illegal memory reference" (signal 11).
 Please check the .dat, .msg, and .sta files for error messages if the files

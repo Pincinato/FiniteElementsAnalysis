@@ -6,14 +6,6 @@
 ** PARTS
 **
 *Part, name=Part-1
-*End Part
-**  
-**
-** ASSEMBLY
-**
-*Assembly, name=Assembly
-**  
-*Instance, name=Part-1-4, part=Part-1
 *Node
       1,        -22.5,         8.75
       2,        -22.5,        -1.25
@@ -528,7 +520,7 @@
     511,  -23.8284168,   5.69260836
     512,  -23.5561562,   7.94219112
     513,  -24.4446907,   7.47112036
-*Element, type=CPS4R
+*Element, type=CPS4
  1,   1,  19, 193,  43
  2,  19,  20, 194, 193
  3,  20,  21, 195, 194
@@ -999,6 +991,14 @@
 ** Section: Section-1
 *Solid Section, elset=Set-19, material=hyperplastic
 1.,
+*End Part
+**  
+**
+** ASSEMBLY
+**
+*Assembly, name=Assembly
+**  
+*Instance, name=Part-1-4, part=Part-1
 *End Instance
 **  
 *Node
@@ -1035,7 +1035,7 @@ _s_Surf-2_S3, S3
 ** 
 *Step, name=Step-1, nlgeom=YES
 *Static
-0.1, 1., 1e-05, 1.
+0.1, 1., 1e-05, 0.1
 ** 
 ** BOUNDARY CONDITIONS
 ** 
@@ -1054,16 +1054,11 @@ Set-8, 6, 6
 ** 
 ** FIELD OUTPUT: F-Output-1
 ** 
-*Output, field
-*Node Output
-CF, RF, RT, U
-*Element Output, directions=YES
-S, 
+*Output, field, variable=PRESELECT
 ** 
 ** HISTORY OUTPUT: H-Output-1
 ** 
 *Output, history, variable=PRESELECT
 *NODE PRINT, NSET=m_Set-8, FREQ=1
 U2,RF2
-*End Step
 *End Step

@@ -1,0 +1,409 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2016 replay file
+# Internal Version: 2015_09_24-22.31.09 126547
+# Run by fe1 on Fri May 11 08:36:42 2018
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=246.569549560547, 
+    height=121.358612060547)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+openMdb(
+    pathName='/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/againagainagin.cae')
+#: The model database "/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/againagainagin.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+p = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb'])
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=105.285, 
+    farPlane=185.589, width=31.6769, height=8.76348, viewOffsetX=3.04805, 
+    viewOffsetY=30.1998)
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RT', 
+    NODAL), ('U', NODAL), ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'RT', NODAL), ('U', NODAL), ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+xyp = session.XYPlot('XYPlot-1')
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RT', 
+    NODAL, ((COMPONENT, 'RT2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'RT', NODAL, ((COMPONENT, 'RT2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), 
+    ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+del session.xyDataObjects['RT:Magnitude PI: ASSEMBLY N: 1']
+del session.xyDataObjects['RT:RT1 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['RT:RT2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['RT:RT2 PI: ASSEMBLY N: 1_1']
+del session.xyDataObjects['U:Magnitude PI: ASSEMBLY N: 1']
+del session.xyDataObjects['U:U1 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1_1']
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['_RT:RT2 PI: ASSEMBLY N: 1_1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RT', 
+    NODAL, ((COMPONENT, 'RT2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('PART-1-4', 1, ('[#0:2 #1 ]', )), ), )
+del session.xyDataObjects['_RT:RT2 PI: ASSEMBLY N: 1_1']
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-1'].materials['hyperplastic'].hyperelastic.setValues(table=((
+    0.1, 0.0), ))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Job CPS4_hyperplastic: Analysis Input File Processor completed successfully.
+#: Job CPS4_hyperplastic: Abaqus/Standard completed successfully.
+#: Job CPS4_hyperplastic completed successfully. 
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=104.007, 
+    farPlane=186.868, width=50.7469, height=17.4135, viewOffsetX=0.0301953, 
+    viewOffsetY=25.1427)
+del session.xyDataObjects['U:U2 PI: PART-1-4 N: 65']
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['RT:RT2 PI: PART-1-4 N: 65']
+del session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'RF', NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), 
+    ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+p1 = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-1'].materials['hyperplastic'].hyperelastic.setValues(table=((
+    0.1302, 0.0), ))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Job CPS4_hyperplastic: Analysis Input File Processor completed successfully.
+#: Job CPS4_hyperplastic: Abaqus/Standard completed successfully.
+#: Job CPS4_hyperplastic completed successfully. 
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+del session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['_RF:RF2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['_U:U2 PI: ASSEMBLY N: 1']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=116.625, 
+    farPlane=174.249, width=26.5754, height=9.11916, viewOffsetX=0.0507513, 
+    viewOffsetY=16.6287)
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'RF', NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), 
+    ), nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb'])
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=106.621, 
+    farPlane=184.254, width=32.0563, height=10.9999, viewOffsetX=-1.87108, 
+    viewOffsetY=14.7969)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=106.27, 
+    farPlane=184.604, width=31.9509, height=10.9637, cameraPosition=(-21, 
+    -6.32595, 145.437), cameraTarget=(-21, -6.32595, 0), viewOffsetX=-1.86493, 
+    viewOffsetY=14.7483)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=112.413, 
+    farPlane=198.491, width=33.7977, height=11.5975, cameraPosition=(-20.3981, 
+    155.371, 39.1143), cameraUpVector=(-0.0154777, 0.131676, -0.991172), 
+    cameraTarget=(-20.6879, 11.2004, 19.9659), viewOffsetX=-1.97273, 
+    viewOffsetY=15.6008)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=112.801, 
+    farPlane=195.111, width=33.9145, height=11.6375, cameraPosition=(58.5722, 
+    131.039, 39.1143), cameraUpVector=(0.0560155, 0.120168, -0.991172), 
+    cameraTarget=(-17.4239, 8.52423, 19.9659), viewOffsetX=-1.97954, 
+    viewOffsetY=15.6547)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=113.346, 
+    farPlane=194.567, width=30.8431, height=10.5836, viewOffsetX=-1.49078, 
+    viewOffsetY=16.0125)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=112.669, 
+    farPlane=194.304, width=30.6589, height=10.5204, cameraPosition=(58.5722, 
+    130.481, 39.1143), cameraTarget=(-17.4239, 7.96628, 19.9659), 
+    viewOffsetX=-1.48188, viewOffsetY=15.9168)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=106.959, 
+    farPlane=204.684, width=29.1053, height=9.98728, cameraPosition=(-69.6814, 
+    130.481, -79.9405), cameraUpVector=(-0.560291, 0.120168, 0.819533), 
+    cameraTarget=(-14.5232, 7.96628, -24.266), viewOffsetX=-1.40679, 
+    viewOffsetY=15.1102)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=112.062, 
+    farPlane=202.264, width=30.4939, height=10.4638, cameraPosition=(-116.248, 
+    -95.0522, -79.9405), cameraUpVector=(0.12989, -0.558117, 0.819533), 
+    cameraTarget=(-28.8894, 7.0302, -24.266), viewOffsetX=-1.47391, 
+    viewOffsetY=15.8311)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=116.692, 
+    farPlane=198.228, width=31.7537, height=10.8961, cameraPosition=(-116.248, 
+    -0.925891, -127.292), cameraUpVector=(0.12989, -0.984967, 0.113885), 
+    cameraTarget=(-28.8894, 23.7327, -13.6587), viewOffsetX=-1.5348, 
+    viewOffsetY=16.4851)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=102.945, 
+    farPlane=211.975, width=153.198, height=52.5689, viewOffsetX=1.64581, 
+    viewOffsetY=11.1212)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=108.891, 
+    farPlane=218.09, width=162.046, height=55.605, cameraPosition=(81.3824, 
+    18.3091, -127.292), cameraUpVector=(-0.121752, 0.986006, 0.113885), 
+    cameraTarget=(-6.17681, -5.62731, -13.6587), viewOffsetX=1.74086, 
+    viewOffsetY=11.7636)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=105.986, 
+    farPlane=224.322, width=157.722, height=54.1213, cameraPosition=(-23.8599, 
+    18.3091, 165.017), cameraUpVector=(0.0264433, 0.986006, -0.164603), 
+    cameraTarget=(-24.2852, -5.62731, 21.5634), viewOffsetX=1.69441, 
+    viewOffsetY=11.4497)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=119.093, 
+    farPlane=211.215, width=45.0558, height=15.4606, viewOffsetX=0.396574, 
+    viewOffsetY=29.7422)
+del session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['_RF:RF2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['_U:U2 PI: ASSEMBLY N: 1']
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodeSets=('M_SET-8', ))
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Model-1'].rootAssembly
+a.makeDependent(instances=(a.instances['Part-1-4'], ))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+a = mdb.models['Model-1'].rootAssembly
+a.makeIndependent(instances=(a.instances['Part-1-4'], ))
+a = mdb.models['Model-1'].rootAssembly
+partInstances =(a.instances['Part-1-4'], )
+a.generateMesh(regions=partInstances)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Job CPS4_hyperplastic: Analysis Input File Processor completed successfully.
+#: Job CPS4_hyperplastic: Abaqus/Standard completed successfully.
+#: Job CPS4_hyperplastic completed successfully. 
+o3 = session.openOdb(
+    name='/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb')
+#: Model: /home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             2
+#: Number of Element Sets:       5
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1_1']
+del session.xyDataObjects['U:U2 PI: ASSEMBLY N: 1']
+del session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1_1']
+del session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodeSets=('M_SET-8', ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=106.531, 
+    farPlane=184.344, width=29.0979, height=9.98477, viewOffsetX=0.308033, 
+    viewOffsetY=28.5905)
+odb = session.odbs['/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/CPS4_hyperplastic.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('RF', 
+    NODAL, ((COMPONENT, 'RF2'), )), ('U', NODAL, ((COMPONENT, 'U2'), )), ), 
+    nodePick=(('ASSEMBLY', 1, ('[#1 ]', )), ), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=88.7468, 
+    farPlane=202.128, width=183.111, height=62.8333, viewOffsetX=-10.166, 
+    viewOffsetY=10.6458)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1_1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+#: The contents of viewport "Viewport: 1" have been copied to the clipboard.
+p1 = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-1'].materials['hyperplastic'].hyperelastic.setValues(table=((
+    0.01, 0.0), ))
+mdb.models['Model-1'].materials['hyperplastic'].hyperelastic.setValues(table=((
+    0.04, 0.0), ))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Job(name='CPSR4_without_Optimization', model='Model-1', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['CPSR4_without_Optimization'].submit(consistencyChecking=OFF)
+#: The job input file "CPSR4_without_Optimization.inp" has been submitted for analysis.
+#: Error in job CPSR4_without_Optimization: The executable pre aborted with system error "Illegal memory reference" (signal 11). Please check the .dat, .msg, and .sta files for error messages if the files exist.  If there are no error messages and you cannot resolve the problem, please run the command "abaqus job=support information=support" to report and save your system information.  Use the same command to run Abaqus that you used when the problem occurred.  Please contact your local Abaqus support office and send them the input file, the file support.log which you just created, the executable name, and the error code.
+#: Job CPSR4_without_Optimization aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['CPS4_hyperplastic'].submit(consistencyChecking=OFF)
+#: The job input file "CPS4_hyperplastic.inp" has been submitted for analysis.
+#: Error in job CPS4_hyperplastic: The executable pre aborted with system error "Illegal memory reference" (signal 11). Please check the .dat, .msg, and .sta files for error messages if the files exist.  If there are no error messages and you cannot resolve the problem, please run the command "abaqus job=support information=support" to report and save your system information.  Use the same command to run Abaqus that you used when the problem occurred.  Please contact your local Abaqus support office and send them the input file, the file support.log which you just created, the executable name, and the error code.
+#: Job CPS4_hyperplastic aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p1 = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+elemType1 = mesh.ElemType(elemCode=CPS4R, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPS3, elemLibrary=STANDARD)
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['Part-1-4'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#1ff ]', ), )
+pickedRegions =(faces1, )
+a.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['CPSR4_without_Optimization'].submit(consistencyChecking=OFF)
+#: The job input file "CPSR4_without_Optimization.inp" has been submitted for analysis.
+#: Error in job CPSR4_without_Optimization: The executable pre aborted with system error "Illegal memory reference" (signal 11). Please check the .dat, .msg, and .sta files for error messages if the files exist.  If there are no error messages and you cannot resolve the problem, please run the command "abaqus job=support information=support" to report and save your system information.  Use the same command to run Abaqus that you used when the problem occurred.  Please contact your local Abaqus support office and send them the input file, the file support.log which you just created, the executable name, and the error code.
+#: Job CPSR4_without_Optimization aborted due to errors.
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/againagainagin.cae".
