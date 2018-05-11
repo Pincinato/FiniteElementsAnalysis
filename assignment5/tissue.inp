@@ -1028,7 +1028,7 @@ _s_Surf-2_S3, S3
 ** 
 *Material, name=hyperplastic
 *Hyperelastic, neo hooke
- *INCLUDE, INPUT=coefficient.inp
+*INCLUDE, INPUT=coefficient.inp
 ** ----------------------------------------------------------------
 ** 
 ** STEP: Step-1
@@ -1059,4 +1059,6 @@ Set-8, 6, 6
 ** HISTORY OUTPUT: H-Output-1
 ** 
 *Output, history, variable=PRESELECT
+*NODE PRINT, NSET=_PickedSet8, FREQ=1
+U2,RF2
 *End Step

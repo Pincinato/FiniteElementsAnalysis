@@ -151,3 +151,23 @@ chart = xyp.charts[chartName]
 curveList = session.curveSet(xyData=xyList)
 chart.setValues(curvesToPlot=curveList)
 session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['_U:U2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['RT:RT2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['RF:RF2 PI: ASSEMBLY N: 1']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+mdb.save()
+#: The model database has been saved to "/home/fe1/Desktop/FiniteElementsAnalysis/assignment5/againagainagin.cae".
