@@ -1,0 +1,231 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models.changeKey(fromName='Model-1', toName='3d-Lagrange')
+mdb.Model(modelType=STANDARD_EXPLICIT, name='3D_lagrange')
+del mdb.models['3d-Lagrange']
+mdb.models['3D_lagrange'].ConstrainedSketch(name='__profile__', sheetSize=
+    100.0)
+mdb.models['3D_lagrange'].sketches['__profile__'].rectangle(point1=(8.0, -12.0)
+    , point2=(-38.0, 2.0))
+mdb.models['3D_lagrange'].sketches['__profile__'].HorizontalDimension(
+    textPoint=(-36.0826797485352, 7.02277565002441), value=30.0, vertex1=
+    mdb.models['3D_lagrange'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['3D_lagrange'].sketches['__profile__'].vertices[2])
+mdb.models['3D_lagrange'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -27.5657978057861, -11.2744026184082), value=20.0, vertex1=
+    mdb.models['3D_lagrange'].sketches['__profile__'].vertices[2], vertex2=
+    mdb.models['3D_lagrange'].sketches['__profile__'].vertices[3])
+# Save by fe1 on 2018_05_14-09.31.57; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['3D_lagrange'].Part(dimensionality=THREE_D, name='Lagrange', type=
+    DEFORMABLE_BODY)
+mdb.models['3D_lagrange'].parts['Lagrange'].BaseSolidExtrude(depth=2.0, sketch=
+    mdb.models['3D_lagrange'].sketches['__profile__'])
+del mdb.models['3D_lagrange'].sketches['__profile__']
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].vertices[6], vector=(0.0, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByCoordinate(coords=(
+    -4.0, 0.0, 0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByCoordinate(coords=(
+    -4.0, 15.0, 0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByCoordinate(coords=(
+    -19.0, 0.0, 0.0))
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-1']
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-2']
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-3']
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-4']
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].vertices[3], vector=(0.0, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByCoordinate(coords=(7.5, 
+    0.0, 0.0))
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-2']
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-1']
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].vertices[1], vector=(0.0, 0.0, 
+    0.0))
+del mdb.models['3D_lagrange'].parts['Lagrange'].features['Datum pt-1']
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].vertices[1], vector=(0.0, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[9], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[10], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[11], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[9], vector=(0.0, -15.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[13], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[14], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[15], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].deleteFeatures(('Datum pt-5', 
+    'Datum pt-6', 'Datum pt-7', 'Datum pt-8'))
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#1 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[4], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[10])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#2 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[7], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[11])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#4 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[19], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[12])
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].vertices[18], vector=(0.0, 4.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[20], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[21], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[22], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[23], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[9], vector=(0.0, -1.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[25], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[26], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[27], vector=(7.5, 0.0, 
+    0.0))
+mdb.models['3D_lagrange'].parts['Lagrange'].DatumPointByOffset(point=
+    mdb.models['3D_lagrange'].parts['Lagrange'].datums[28], vector=(7.5, 0.0, 
+    0.0))
+# Save by fe1 on 2018_05_14-09.52.43; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#4 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[32], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[25])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#4 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[10], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[26])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#4 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[7], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[27])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#40 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[7], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[28])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#8 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[58], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[20])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#8 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[4], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[21])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#8 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[49], 
+    point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[22])
+mdb.models['3D_lagrange'].parts['Lagrange'].PartitionCellByPlaneNormalToEdge(
+    cells=
+    mdb.models['3D_lagrange'].parts['Lagrange'].cells.getSequenceFromMask((
+    '[#400 ]', ), ), edge=mdb.models['3D_lagrange'].parts['Lagrange'].edges[43]
+    , point=mdb.models['3D_lagrange'].parts['Lagrange'].datums[23])
+# Save by fe1 on 2018_05_14-09.56.31; build 2016 2015_09_24-22.31.09 126547
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['3D_lagrange'].Material(name='Material-lagrange')
+mdb.models['3D_lagrange'].materials['Material-lagrange'].Elastic(table=((
+    210000.0, 0.266), ))
+mdb.models['3D_lagrange'].materials['Material-lagrange'].Density(table=((7.85, 
+    ), ))
+mdb.models['3D_lagrange'].materials['Material-lagrange'].Plastic(table=((300.0, 
+    0.0), (450.0, 0.02), (750.0, 0.34), (1400.0, 0.35)))
+mdb.models['3D_lagrange'].parts.changeKey(fromName='Lagrange', toName=
+    'Eulerian')
+mdb.models['3D_lagrange'].ConstrainedSketch(name='__profile__', sheetSize=
+    100.0)
+del mdb.models['3D_lagrange'].sketches['__profile__']
+mdb.models['3D_lagrange'].parts['Eulerian'].setValues(space=THREE_D, type=
+    EULERIAN)
+# Save by fe1 on 2018_05_14-10.02.40; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_05_14-10.02.44; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_05_14-10.02.45; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_05_14-10.02.45; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_05_14-10.02.45; build 2016 2015_09_24-22.31.09 126547
+# Save by fe1 on 2018_05_14-10.03.15; build 2016 2015_09_24-22.31.09 126547
